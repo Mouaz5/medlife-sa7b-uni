@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('study_years', function (Blueprint $table) {
             $table->id();
             $table->enum('year', ['first', 'second', 'third', 'fourth', 'fifth']);
+            $table->foreignId('collage_id')->constrained('collages')->cascadeOnDelete();
             $table->timestamps();
         });
     }

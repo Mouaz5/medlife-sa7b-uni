@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\AcademicYear;
+use App\Models\StudyYear;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,6 +21,7 @@ class SemesterFactory extends Factory
         return [
             'term' => $this->faker->word,
             'academic_year_id' => AcademicYear::inRandomOrder()->value('id'),
+            'study_year_id' => StudyYear::inRandomOrder()->value('id'),
         ];
     }
 }

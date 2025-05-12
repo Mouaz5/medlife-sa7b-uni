@@ -20,8 +20,13 @@ class Student extends Model
         'linkedIn_account',
         'facebook_account',
         'github_account',
-        'x.com_account',
+        'x_account',
     ];
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->middle_name} {$this->last_name}";
+    }
+
     public function courses()
     {
         return $this->belongsToMany(Course::class);
@@ -37,5 +42,19 @@ class Student extends Model
     public function collage()
     {
         return $this->belongsTo(Collage::class);
+    }
+    public function followerStudents()
+    {
+        return $this->belongsToMany(Student::class, 'follows', 'followed_id', 'follower_id');
+    }
+
+    public function followingStudents()
+    {
+        return $this->belongsToMany(Student::class, 'follows', 'follower_id', 'followed_id');
+    }
+
+    public function privacySettings()
+    {
+        return $this->hasOne(PrivacySetting::class);
     }
 }

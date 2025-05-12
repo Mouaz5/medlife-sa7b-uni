@@ -15,7 +15,12 @@ class Student extends Model
         'last_name',
         'phone_number',
         'image',
-        'user_id'
+        'user_id',
+        'collage_id',
+        'linkedIn_account',
+        'facebook_account',
+        'github_account',
+        'x.com_account',
     ];
     public function courses()
     {
@@ -27,6 +32,10 @@ class Student extends Model
     }
     public function academicTimeline()
     {
-        return $this->hasMany(AcademicTimeline::class);
+        return $this->hasMany(StudentAcademicTimeline::class);
+    }
+    public function collage()
+    {
+        return $this->belongsTo(Collage::class);
     }
 }

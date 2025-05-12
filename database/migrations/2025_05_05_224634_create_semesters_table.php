@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('term');
             $table->foreignId('academic_year_id')->constrained('academic_years')->cascadeOnDelete();
+            $table->foreignId('study_year_id')->constrained('study_years')->cascadeOnDelete();
             $table->timestamps();
         });
     }

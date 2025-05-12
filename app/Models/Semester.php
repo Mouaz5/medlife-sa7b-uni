@@ -11,7 +11,8 @@ class Semester extends Model
     use HasFactory;
     protected $fillable = [
         'term',
-        'academic_year_id'
+        'academic_year_id',
+        'study_year_id'
     ];
     public function academicYear()
     {
@@ -20,5 +21,9 @@ class Semester extends Model
     public function courses()
     {
         return $this->hasMany(Course::class);
+    }
+    public function studyYear()
+    {
+        return $this->belongsTo(StudyYear::class);
     }
 }

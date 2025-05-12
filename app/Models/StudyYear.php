@@ -16,4 +16,8 @@ class StudyYear extends Model
     {
         return $this->hasMany(Student::class);
     }
+    public function semsters()
+    {
+        return $this->hasMany(Semester::class);
+    }
 }

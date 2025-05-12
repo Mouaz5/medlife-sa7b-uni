@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Collage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class StudyYearFactory extends Factory
     public function definition(): array
     {
         return [
-            'year' => $this->faker->numberBetween(1, 4),
+            'year' => $this->faker->numberBetween(1, 5),
+            'collage_id' => Collage::inRandomOrder()->value('id'),
         ];
     }
 }

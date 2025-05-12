@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('follower_id')->constrained('students')->cascadeOnDelete();
             $table->foreignId('followed_id')->constrained('students')->cascadeOnDelete();
             $table->timestamps();
+            $table->unique(['follower_id', 'followed_id']);
         });
     }
 

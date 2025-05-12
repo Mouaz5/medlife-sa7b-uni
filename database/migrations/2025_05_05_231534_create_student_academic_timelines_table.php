@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('student_academic_timelines', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('study_year_id')->constrained();
-            $table->foreignId('student_id')->constrained();
-            $table->foreignId('specialization_id')->constrained();
-            $table->foreignId('academic_year_id')->constrained();
+            $table->foreignId('study_year_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('student_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('specialization_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('academic_year_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

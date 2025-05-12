@@ -53,5 +53,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Announcement::factory(20)->create();
         \App\Models\AcademicGuidance::factory(20)->create();
         \App\Models\AcademicGuidanceVote::factory(20)->create();
+        \App\Models\Semester::factory(20)->create();
+        \App\Models\AcademicYear::factory(20)->create();
     }
 }

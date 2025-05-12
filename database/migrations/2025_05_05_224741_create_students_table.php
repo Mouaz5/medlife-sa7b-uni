@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('linkedIn_account')->nullable();
             $table->string('facebook_account')->nullable();
             $table->string('github_account')->nullable();
-            $table->string('x.com_account')->nullable();
+            $table->string('x_account')->nullable();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('collage_id')->constrained('collages')->cascadeOnDelete();
             $table->timestamps();

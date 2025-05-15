@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class StudentSkillsController extends Controller
 {
-    public function getMySkills()
+    public function index()
     {
         $user = Auth::user();
         if (!$user) {
@@ -30,7 +30,7 @@ class StudentSkillsController extends Controller
         ], 200);
     }
 
-    public function addSkill(AddStudentSkill $request)
+    public function store(AddStudentSkill $request)
     {
         $user = Auth::user();
         if (!$user) {
@@ -51,20 +51,10 @@ class StudentSkillsController extends Controller
         ], 200);
     }
 
-    public function deleteSkill(Skill $skill)
+    public function destroy(Skill $skill)
     {
         $user = Auth::user();
-        if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
-        }
 
-        if (!$skill) {
-            return response()->json([
-                'message' => 'Skill not found.',
-            ], 404);
-        }
         $student = $user->student;
 
         if ($skill->student_id != $student->id) {
@@ -82,12 +72,6 @@ class StudentSkillsController extends Controller
 
     public function getStudentSkills(Student $student)
     {
-        if (!$student) {
-            return response()->json([
-                'message' => 'Student not found.',
-            ], 404);
-        }
-
         $skills = Skill::where('student_id', $student->id)->get();
 
         return response()->json([

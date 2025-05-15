@@ -10,14 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class PrivacySettingsController extends Controller
 {
 
-    public function getPrivacySettings()
+    public function index()
     {
         $user = Auth::user();
-        if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
-        }
 
         $student = $user->student;
         $privacySettings = $student->privacySettings;
@@ -28,14 +23,9 @@ class PrivacySettingsController extends Controller
         ]);
     }
 
-    public function updatePrivacySettings(UpdatePrivacySettingsRequest $request)
+    public function update(UpdatePrivacySettingsRequest $request)
     {
         $user = Auth::user();
-        if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
-        }
 
         $student = $user->student;
         $privacySetting = $student->privacySettings;

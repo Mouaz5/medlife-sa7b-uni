@@ -40,11 +40,6 @@ class StudentFollowController extends Controller
     public function unfollowStudent(Student $student)
     {
         $user = Auth::user();
-        if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
-        }
 
         $currentStudent = $user->student;
 
@@ -63,15 +58,9 @@ class StudentFollowController extends Controller
         ]);
     }
 
-    public function getMyFollowers()
+    public function index()
     {
         $user = Auth::user();
-
-        if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
-        }
 
         $student = $user->student;
 

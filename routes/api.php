@@ -7,6 +7,7 @@ use App\Http\Controllers\API\Mobile\StudentAccountController;
 use App\Http\Controllers\API\Mobile\StudentCertificatesController;
 use App\Http\Controllers\API\Mobile\StudentFollowController;
 use App\Http\Controllers\API\Mobile\StudentSkillsController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,55 +19,44 @@ Route::post('register/complete', [AuthController::class, 'completeRegistration']
 Route::post('login/otp', [AuthController::class, 'requestOTPForLogin']);
 Route::post('login/verify', [AuthController::class, 'verifyOTPForLogin']);
 
-// End Auth
-
-Route::middleware(['auth:sanctum'])->group(function () {
-    //Auth
+Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']], function () {
+    // Account
+    Route::group(['prefix' => 'account'], function () {
+        Route::get('/', [StudentAccountController::class, 'account']);
+        Route::get('/{student}', [StudentAccountController::class, 'getStudentAccount']);
+        Route::patch('update', [StudentAccountController::class, 'updateAccount']);
+        Route::delete('delete', [StudentAccountController::class, 'deleteAccount']);
+    });
+    // Search
+    Route::group(['prefix' => 'search'], function () {
+        Route::get('/', [SearchController::class, 'searchStudentAccount']);
+    });
+    // Skills
+    Route::group(['prefix' => 'skills'], function () {
+        Route::get('/', [StudentSkillsController::class, 'index']);
+        Route::get('/{student}', [StudentSkillsController::class, 'getStudentSkills']);
+        Route::post('/', [StudentSkillsController::class, 'store']);
+        Route::delete('/{skill}', [StudentSkillsController::class, 'destroy']);
+    });
+    // Certificates
+    Route::group(['prefix' => 'certificates'], function () {
+        Route::get('/', [StudentCertificatesController::class, 'getMyCertificates']);
+        Route::get('{student}/student', [StudentCertificatesController::class, 'getStudentCertificates']);
+        Route::post('/', [StudentCertificatesController::class, 'addCertificate']);
+        Route::delete('/{certificate}', [StudentCertificatesController::class, 'deleteCertificate']);
+    });
+    // Follow
+    Route::group(['prefix' => 'followers'], function () {
+        Route::get('/', [StudentFollowController::class, 'index']);
+        Route::get('/following', [StudentFollowController::class, 'getMyFollowing']);
+        Route::post('/{student}/follow', [StudentFollowController::class, 'followStudent']);
+        Route::post('/{student}/unfollow', [StudentFollowController::class, 'unfollowStudent']);
+    });
+    // Privacy
+    Route::group(['prefix' => 'privacy'], function () {
+        Route::get('/', [PrivacySettingsController::class, 'index']);
+        Route::patch('/', [PrivacySettingsController::class, 'update']);
+    });
     Route::post('logout', [AuthController::class, 'logout']);
-
-    // Get My Account
-    Route::get('student/account', [StudentAccountController::class, 'getMyAccount']);
-    // Get Student Account
-    Route::get('student/{student}/account', [StudentAccountController::class, 'getStudentAccount']);
-    // Search For Student
-    Route::get('student/search', [StudentAccountController::class, 'searchStudentAccount']);
-    // Delete Account
-    Route::delete('student/account', [StudentAccountController::class, 'deleteAccount']);
-    // Update Account
-    Route::patch('student/account', [StudentAccountController::class, 'updateAccount']);
-
-    // My Skills
-    Route::get('student/skills', [StudentSkillsController::class, 'getMySkills']);
-    // Add To My Skills
-    Route::post('student/skills', [StudentSkillsController::class, 'addSkill']);
-    // Delete From My Skills
-    Route::delete('student/skills/{skill}', [StudentSkillsController::class, 'deleteSkill']);
-    // Student Skills
-    Route::get('student/{student}/skills', [StudentSkillsController::class, 'getStudentSkills']);
-
-    // My Certificates
-    Route::get('student/certificates', [StudentCertificatesController::class, 'getMyCertificates']);
-    // Add To My Certificates
-    Route::post('student/certificates', [StudentCertificatesController::class, 'addCertificate']);
-    // Delete From My Certificates
-    Route::delete('student/certificates/{certificate}', [StudentCertificatesController::class, 'deleteCertificate']);
-    // Student Certificates
-    Route::get('student/{student}/certificates', [StudentCertificatesController::class, 'getStudentCertificates']);
-
-    // Get Privacy
-    Route::get('student/privacy', [PrivacySettingsController::class, 'getPrivacySettings']);
-    // Update Privacy
-    Route::patch('student/privacy', [PrivacySettingsController::class, 'updatePrivacySettings']);
-
-
-    // Get My Followers
-    Route::get('student/followers', [StudentFollowController::class, 'getMyFollowers']);
-    // Get My Following
-    Route::get('student/following', [StudentFollowController::class, 'getMyFollowing']);
-    // Follow Student
-    Route::post('student/{student}/follow', [StudentFollowController::class, 'followStudent']);
-    // UnFollow Student
-    Route::post('student/{student}/unfollow', [StudentFollowController::class, 'unfollowStudent']);
 });
-// Get College Courses
 Route::get('college/{id}/courses', [CoursesController::class, 'getAllCourses']);

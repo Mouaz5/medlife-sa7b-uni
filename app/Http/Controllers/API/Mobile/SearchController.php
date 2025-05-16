@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\Mobile;
 
+use App\Http\Controllers\Controller;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller

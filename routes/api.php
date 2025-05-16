@@ -3,11 +3,11 @@
 use App\Http\Controllers\API\Mobile\AuthController;
 use App\Http\Controllers\API\Mobile\CoursesController;
 use App\Http\Controllers\API\Mobile\PrivacySettingsController;
+use App\Http\Controllers\API\Mobile\SearchController;
 use App\Http\Controllers\API\Mobile\StudentAccountController;
 use App\Http\Controllers\API\Mobile\StudentCertificatesController;
 use App\Http\Controllers\API\Mobile\StudentFollowController;
 use App\Http\Controllers\API\Mobile\StudentSkillsController;
-use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +18,10 @@ Route::post('register/complete', [AuthController::class, 'completeRegistration']
 
 Route::post('login/otp', [AuthController::class, 'requestOTPForLogin']);
 Route::post('login/verify', [AuthController::class, 'verifyOTPForLogin']);
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum','admin']], function () {
+    Route::post('logout', [AuthController::class, 'logout']);
+});
 
 Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']], function () {
     // Account

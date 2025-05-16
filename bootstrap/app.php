@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\StudentMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -17,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
             '/*',
         ]);
         $middleware->alias([
+            'admin' => AdminMiddleware::class,
             'student' => StudentMiddleware::class,
         ]);
     })

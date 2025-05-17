@@ -10,7 +10,8 @@ class StudyYear extends Model
     /** @use HasFactory<\Database\Factories\StudyYearFactory> */
     use HasFactory;
     protected $fillable = [
-        'year'
+        'year',
+        'collage_id'
     ];
     public function students()
     {

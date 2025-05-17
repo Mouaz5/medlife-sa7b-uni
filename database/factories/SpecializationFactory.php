@@ -18,7 +18,7 @@ class SpecializationFactory extends Factory
     {
         $specializations = [
             'ذكاء صنعي', 'برمجيات', 'شبكات', 'اتصالات', 'نظم معلومات', 'رياضيات',
-            'تعلم الألة', 'Big data', 'LLM', 
+            'تعلم الألة', 'Big data', 'LLM', 'عام'
         ];
         return [
             'name' => $specializations[$this->faker->numberBetween(0, count($specializations) - 1)],

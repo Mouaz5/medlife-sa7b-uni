@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\StudyYear;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,11 +24,11 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        \App\Models\University::factory(20)->create();
-        \App\Models\Collage::factory(20)->create();
+        $this->call(UniversitySeeder::class);
+        $this->call(CollageSeeder::class);
+        $this->call(StudyYearSeeder::class);
         \App\Models\Topic::factory(20)->create();
         \App\Models\AcademicYear::factory(20)->create();
-        \App\Models\StudyYear::factory(20)->create();
         \App\Models\Semester::factory(20)->create();
         \App\Models\Course::factory(20)->create();
         \App\Models\CourseEvent::factory(20)->create();

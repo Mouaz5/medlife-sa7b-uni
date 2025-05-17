@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Collage;
+use App\Models\College;
 use App\Models\Semester;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +20,7 @@ class CourseFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence,
-            'collage_id' => Collage::inRandomOrder()->value('id'),
+            'collage_id' => College::inRandomOrder()->value('id'),
             'semester_id' => Semester::inRandomOrder()->value('id'),
         ];
     }

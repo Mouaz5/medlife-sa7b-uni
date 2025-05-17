@@ -41,7 +41,7 @@ class Student extends Model
     }
     public function collage()
     {
-        return $this->belongsTo(Collage::class);
+        return $this->belongsTo(College::class);
     }
     public function followerStudents()
     {

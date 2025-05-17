@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Collage extends Model
+class College extends Model
 {
     use HasFactory;
     protected $fillable = [

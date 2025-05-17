@@ -8,7 +8,7 @@ use App\Http\Requests\Auth\RequestOTPForLoginRequest;
 use App\Http\Requests\Auth\RequestOTPForRegistrationRequest;
 use App\Http\Requests\Auth\VerifyOTPRequest;
 use App\Models\AcademicYear;
-use App\Models\Collage;
+use App\Models\College;
 use App\Models\Course;
 use App\Models\PrivacySetting;
 use App\Models\Semester;
@@ -57,7 +57,7 @@ class AuthController extends Controller
             'password' => null,
         ]);
 
-        $college = Collage::where('name', $request->college)->first();
+        $college = College::where('name', $request->college)->first();
         $study_year = StudyYear::where('year', $request->study_year)
             ->where('collage_id', $college->id)
             ->first();

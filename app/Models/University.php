@@ -12,8 +12,8 @@ class University extends Model
     protected $fillable = [
         'name'
     ];
-    public function collages()
+    public function colleges()
     {
-        return $this->hasMany(Collage::class);
+        return $this->hasMany(College::class);
     }
 }

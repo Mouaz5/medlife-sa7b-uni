@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Collage;
+use App\Models\College;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 
@@ -25,7 +25,7 @@ class StudentFactory extends Factory
             'phone_number' => $this->faker->phoneNumber,
             'image' => $this->faker->imageUrl(640, 480, 'people'),
             'user_id' => User::inRandomOrder()->value('id'),
-            'collage_id' => Collage::inRandomOrder()->value('id'),
+            'collage_id' => College::inRandomOrder()->value('id'),
         ];
     }
 }

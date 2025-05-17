@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\Mobile\AuthController;
+use App\Http\Controllers\API\Mobile\CollegeController;
 use App\Http\Controllers\API\Mobile\CoursesController;
 use App\Http\Controllers\API\Mobile\PrivacySettingsController;
 use App\Http\Controllers\API\Mobile\SearchController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\API\Mobile\StudentAccountController;
 use App\Http\Controllers\API\Mobile\StudentCertificatesController;
 use App\Http\Controllers\API\Mobile\StudentFollowController;
 use App\Http\Controllers\API\Mobile\StudentSkillsController;
+use App\Http\Controllers\API\Mobile\UniversityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -64,3 +66,9 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
     Route::post('logout', [AuthController::class, 'logout']);
 });
 Route::get('college/{id}/courses', [CoursesController::class, 'getAllCourses']);
+// universities (index,show,delete,update,store)
+Route::apiResource('universities', UniversityController::class);//بحاجة لاضافة صلاحيات
+//colleges(index,show,delete,update,store)
+Route::apiResource('colleges', CollegeController::class);//بحاجة لاضافة صلاحيات
+// Get colleges for a specific university
+Route::get('universities/{university}/colleges', [UniversityController::class, 'colleges']);//بحاجة لاضافة صلاحيات

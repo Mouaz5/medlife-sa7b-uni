@@ -13,7 +13,7 @@ class StudyYearSeeder extends Seeder
      */
     public function run()
     {
-        $collages = DB::table('collages')->pluck('id')->toArray();
+        $collages = DB::table('colleges')->pluck('id')->toArray();
 
         $studyYears = [];
         foreach ($collages as $collageId) {

@@ -74,7 +74,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
     // Get colleges for a specific university
     Route::get('universities/{university}/colleges', [UniversityController::class, 'colleges']);
     // universities (index,show)
-    Route::apiResource('universities', UniversityController::class)->only(['index,show']);
+    Route::apiResource('universities', UniversityController::class)->only(['index','show']);
     //colleges(show)
     Route::apiResource('colleges', CollegeController::class)->only(['show']);
 });

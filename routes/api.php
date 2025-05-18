@@ -19,6 +19,20 @@ Route::post('login/otp', [AuthController::class, 'requestOTPForLogin']);
 Route::post('login/verify', [AuthController::class, 'verifyOTPForLogin']);
 
 // End Auth
+Route::get('college/{collage_id}/courses', [CoursesController::class, 'getAllCourses']);
+Route::get('college/{collage_id}/courses/show/{id}', [CoursesController::class, 'show_course_by_id']);
+Route::get('college/courses/store', [CoursesController::class, 'store_course']);
+Route::get('college/courses/update', [CoursesController::class, 'store_course']);
+
+//courses 
+Route::prefix('course')->controller(CoursesController::class)->group(function () {
+    Route::get('college/{collage_id}', "getAllCourses");
+    Route::post('store', 'store_course');
+    Route::put('update/{id}', 'update');
+    Route::get('show_course_by_id/{collage_id}/{id}', 'show_course_by_id');
+    Route::delete('destroy/{id}', 'destroy');
+});
+
 
 Route::middleware(['auth:sanctum'])->group(function () {
     //Auth
@@ -69,4 +83,3 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('student/{student}/unfollow', [StudentFollowController::class, 'unfollowStudent']);
 });
 // Get College Courses
-Route::get('college/{id}/courses', [CoursesController::class, 'getAllCourses']);

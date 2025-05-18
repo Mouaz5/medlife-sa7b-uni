@@ -20,8 +20,15 @@ Route::post('register/complete', [AuthController::class, 'completeRegistration']
 
 Route::post('login/otp', [AuthController::class, 'requestOTPForLogin']);
 Route::post('login/verify', [AuthController::class, 'verifyOTPForLogin']);
-
+//admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum','admin']], function () {
+    // universities (delete,update,store)
+    Route::apiResource('universities', UniversityController::class);
+    //colleges(delete,update,store)
+    Route::apiResource('colleges', CollegeController::class);
+    // Get colleges for a specific university
+    Route::get('universities/{university}/colleges', [UniversityController::class, 'colleges']);
+
     Route::post('logout', [AuthController::class, 'logout']);
 });
 
@@ -64,11 +71,13 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
         Route::patch('/', [PrivacySettingsController::class, 'update']);
     });
     Route::post('logout', [AuthController::class, 'logout']);
+    // Get colleges for a specific university
+    Route::get('universities/{university}/colleges', [UniversityController::class, 'colleges']);
+    // universities (index,show)
+    Route::apiResource('universities', UniversityController::class)->only(['index,show']);
+    //colleges(show)
+    Route::apiResource('colleges', CollegeController::class)->only(['show']);
 });
 Route::get('college/{id}/courses', [CoursesController::class, 'getAllCourses']);
-// universities (index,show,delete,update,store)
-Route::apiResource('universities', UniversityController::class);//بحاجة لاضافة صلاحيات
-//colleges(index,show,delete,update,store)
-Route::apiResource('colleges', CollegeController::class);//بحاجة لاضافة صلاحيات
-// Get colleges for a specific university
-Route::get('universities/{university}/colleges', [UniversityController::class, 'colleges']);//بحاجة لاضافة صلاحيات
+
+

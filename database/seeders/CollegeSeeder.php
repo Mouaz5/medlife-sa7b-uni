@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CollageSeeder extends Seeder
+class CollegeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -74,6 +74,6 @@ class CollageSeeder extends Seeder
             return array_merge($collage, ['created_at' => now(), 'updated_at' => now()]);
         }, $collages);
 
-        DB::table('collages')->insert($records);
+        DB::table('colleges')->insert($records);
     }
 }

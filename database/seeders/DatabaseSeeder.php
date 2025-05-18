@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
+        User::where('email', 'test@example.com')->delete();
 
         User::factory()->create([
             'username' => 'test_user',
@@ -25,7 +26,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(UniversitySeeder::class);
-        $this->call(CollageSeeder::class);
+        $this->call(CollegeSeeder::class);
         $this->call(StudyYearSeeder::class);
         \App\Models\Topic::factory(20)->create();
         \App\Models\AcademicYear::factory(20)->create();

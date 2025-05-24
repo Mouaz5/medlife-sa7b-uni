@@ -27,10 +27,11 @@ class Student extends Model
         return "{$this->first_name} {$this->middle_name} {$this->last_name}";
     }
 
+
     public function courses()
-    {
-        return $this->belongsToMany(Course::class);
-    }
+{
+    return $this->belongsToMany(Course::class, 'student_courses');
+}
     public function user()
     {
         return $this->belongsTo(User::class);

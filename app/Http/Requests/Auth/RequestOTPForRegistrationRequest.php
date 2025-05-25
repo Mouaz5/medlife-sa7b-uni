@@ -22,10 +22,10 @@ class RequestOTPForRegistrationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'phone_number' => [
+            'email' => [
                 'required',
-                'digits:10',
-                'unique:students,phone_number'
+                'email',
+                'unique:users,email'
             ],
         ];
     }
@@ -38,9 +38,9 @@ class RequestOTPForRegistrationRequest extends FormRequest
     public function messages()
     {
         return [
-            'phone_number.required' => 'The phone number is required.',
-            'phone_number.digits' => 'The phone number must be exactly 10 digits.',
-            'phone_number.unique' => 'The phone number is already registered.',
+            'email.required' => 'The email address is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.unique' => 'This email is already registered.',
         ];
     }
 }

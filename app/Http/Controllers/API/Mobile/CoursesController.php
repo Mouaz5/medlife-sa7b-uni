@@ -15,7 +15,7 @@ class CoursesController extends Controller
 {
     public function getAllCourses($collage_id)
     {
-        $courses = Course::where('collage_id', $collage_id)->with([
+        $courses = Course::where('college_id', $collage_id)->with([
             'collage.university',
             'semester.academicYear',
             'semester.studyYear'
@@ -139,5 +139,4 @@ class CoursesController extends Controller
             );
         }
     }
-
 }

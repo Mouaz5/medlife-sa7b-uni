@@ -22,6 +22,7 @@ class CompleteRegistrationRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'email' => 'required|email|unique:users,email',
             'phone_number' => 'required|digits:10|unique:students,phone_number',
             'first_name' => 'required|string|max:255',
             'middle_name' => 'required|string|max:255',

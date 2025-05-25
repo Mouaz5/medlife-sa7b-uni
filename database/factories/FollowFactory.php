@@ -3,11 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Student;
+use App\Models\Follow;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Follow>
- */
 class FollowFactory extends Factory
 {
     /**
@@ -18,8 +16,23 @@ class FollowFactory extends Factory
     public function definition(): array
     {
         return [
-            'follower_id' => Student::inRandomOrder()->value('id'),
-            'followed_id' => Student::inRandomOrder()->value('id'),
+            'follower_id' => Student::factory(),
+            'followed_id' => Student::factory(),
         ];
+    }
+
+    /**
+     * Configure the factory to ensure unique follower-followed pairs
+     */
+    public function configure()
+    {
+        return $this->afterMaking(function (Follow $follow) {
+            // Ensure follower and followed are different students
+            if ($follow->follower_id === $follow->followed_id) {
+                $follow->followed_id = Student::where('id', '!=', $follow->follower_id)
+                    ->inRandomOrder()
+                    ->value('id');
+            }
+        });
     }
 }

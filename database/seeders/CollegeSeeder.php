@@ -15,7 +15,7 @@ class CollegeSeeder extends Seeder
     {
         $universities = DB::table('universities')->pluck('id', 'name')->toArray();
 
-        $collages = [
+        $colleges = [
             ['name' => 'Faculty of Medicine', 'university_id' => $universities['Damascus University']],
             ['name' => 'Faculty of Dentistry', 'university_id' => $universities['Damascus University']],
             ['name' => 'Faculty of Pharmacy', 'university_id' => $universities['Damascus University']],
@@ -70,9 +70,9 @@ class CollegeSeeder extends Seeder
             ['name' => 'Faculty of Aeronautical Engineering', 'university_id' => $universities['Higher Institute of Applied Sciences and Technology']],
         ];
 
-        $records = array_map(function ($collage) {
-            return array_merge($collage, ['created_at' => now(), 'updated_at' => now()]);
-        }, $collages);
+        $records = array_map(function ($college) {
+            return array_merge($college, ['created_at' => now(), 'updated_at' => now()]);
+        }, $colleges);
 
         DB::table('colleges')->insert($records);
     }

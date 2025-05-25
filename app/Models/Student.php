@@ -16,7 +16,7 @@ class Student extends Model
         'phone_number',
         'image',
         'user_id',
-        'collage_id',
+        'college_id',
         'linkedIn_account',
         'facebook_account',
         'github_account',
@@ -40,7 +40,7 @@ class Student extends Model
     {
         return $this->hasMany(StudentAcademicTimeline::class);
     }
-    public function collage()
+    public function college()
     {
         return $this->belongsTo(College::class);
     }

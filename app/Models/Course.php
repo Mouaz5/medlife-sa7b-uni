@@ -11,10 +11,10 @@ class Course extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'collage_id',
+        'college_id',
         'semester_id'
     ];
-    public function collage()
+    public function college()
     {
         return $this->belongsTo(College::class);
     }

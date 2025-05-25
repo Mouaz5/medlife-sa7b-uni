@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Mobile;
+namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentAccount\UpdateStudentAccountRequest;
@@ -11,7 +11,7 @@ use App\Services\UploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class StudentAccountController extends Controller
+class AccountController extends Controller
 {
 
     protected $uploadService;

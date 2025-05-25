@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Mobile;
+namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentCertificates\AddStudentCertificate;
@@ -10,7 +10,7 @@ use App\Services\UploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class StudentCertificatesController extends Controller
+class CertificatesController extends Controller
 {
     protected $uploadService;
     public function __construct(UploadService $uploadService)

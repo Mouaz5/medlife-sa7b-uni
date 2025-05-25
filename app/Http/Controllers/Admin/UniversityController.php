@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Mobile;
+namespace App\Http\ControllersAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\University;
@@ -16,18 +16,13 @@ class UniversityController extends Controller
         return response()->json($universities);
     }
 
-
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|unique:universities',
+        $request->validate([
+            'name' => 'required|string|max:255|unique:universities'
         ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
-
-        $university = University::query()->create($request->all());
+        $university = University::query()->create($request->only('name'));
 
         return response()->json($university, 201);
     }
@@ -51,13 +46,9 @@ class UniversityController extends Controller
             return response()->json(['message' => 'University not found'], 404);
         }
 
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|unique:universities,name,' . $id,
+        $request->validate([
+            'name' => 'required|string|max:255|unique:universities'
         ]);
-
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
 
         $university->update($request->all());
 

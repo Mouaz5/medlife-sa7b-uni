@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Mobile;
+namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Models\Follow;
@@ -8,7 +8,7 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class StudentFollowController extends Controller
+class FollowController extends Controller
 {
     public function followStudent(Student $student)
     {

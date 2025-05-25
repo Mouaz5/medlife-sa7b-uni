@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Mobile;
+namespace App\Http\Controllers\Student;
 
 use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;

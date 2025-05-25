@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Mobile;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\CompleteRegistrationRequest;
@@ -21,6 +21,7 @@ use App\Models\User;
 use App\Services\OtpService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Helpers\ApiFormatter;
 
 class AuthController extends Controller
 {
@@ -28,24 +29,23 @@ class AuthController extends Controller
     {
         $request->validated();
         $otp = OtpService::generateOtp($request->email, 'register');
-        return response()->json([
-            'message' => "OTP Sent",
-            'otp' => 'for testing purposes only -- this is the otp ' . $otp
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('otp sent')
+        );
     }
 
     public function verifyOTPForRegistration(VerifyOTPRequest $request)
     {
         $verified = OtpService::verifyOtp($request->email, 'register', $request->otp);
         if (!$verified) {
-            return response()->json([
-                'message' => 'OTP Verification Failed'
-            ], 400);
+            return response()->json(
+                ApiFormatter::error('OTP Verification Failed')
+            );
         }
         OtpService::clearOtp($request->email, 'register');
-        return response()->json([
-            'message' => 'OTP verified successfully. Please continue with registration.'
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('OTP verified successfully. Please continue with registration.')
+        );
     }
 
     public function completeRegistration(CompleteRegistrationRequest $request)
@@ -100,29 +100,27 @@ class AuthController extends Controller
 
         $token = $user->createToken('register_token')->plainTextToken;
 
-        return response()->json([
-            'message' => 'Registration Completed Successfully',
-            'data' => $token
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('Registration Completed Successfully')
+        );
     }
 
     public function requestOTPForLogin(RequestOTPForLoginRequest $request)
     {
         $request->validated();
         $otp = OtpService::generateOtp($request->email, 'login');
-        return response()->json([
-            'message' => "OTP Sent",
-            'otp' => 'for testing purposes only -- this is the otp ' . $otp
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('otp sent')
+        );
     }
 
     public function verifyOTPForLogin(VerifyOTPRequest $request)
     {
         $verified = OtpService::verifyOtp($request->email, 'login', $request->otp);
         if (!$verified) {
-            return response()->json([
-                'message' => 'OTP Verification Failed'
-            ], 400);
+            return response()->json(
+                ApiFormatter::error('OTP Verification Failed')
+            );
         }
         OtpService::clearOtp($request->email, 'login');
 
@@ -130,16 +128,17 @@ class AuthController extends Controller
 
         $token = $user->createToken('login_token')->plainTextToken;
 
-        return response()->json([
-            'message' => 'OTP verified successfully',
-            'data' => $token
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('OTP verified successfully')
+        );
     }
 
     public function logout()
     {
         $user = Auth::user();
         $user->tokens()->delete();
-        return response()->json(['message' => 'Logged out successfully'], 200);
+        return response()->json(
+            ApiFormatter::success('Logged out successfully')
+        );
     }
 }

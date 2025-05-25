@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\Follow;
 use App\Models\Student;
@@ -14,17 +15,17 @@ class FollowController extends Controller
     {
         $user = Auth::user();
         if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $currentStudent = $user->student;
 
         if ($currentStudent->id === $student->id) {
-            return response()->json([
-                'message' => 'You cannot follow yourself.',
-            ], 400);
+            return response()->json(
+                ApiFormatter::error('You cannot follow yourself.')
+            );
         }
 
         Follow::create([
@@ -32,9 +33,9 @@ class FollowController extends Controller
             'followed_id' => $student->id,
         ]);
 
-        return response()->json([
-            'message' => 'Student Followed Successfully'
-        ]);
+        return response()->json(
+            ApiFormatter::success('Student Followed Successfully')
+        );
     }
 
     public function unfollowStudent(Student $student)
@@ -44,18 +45,18 @@ class FollowController extends Controller
         $currentStudent = $user->student;
 
         if ($currentStudent->id === $student->id) {
-            return response()->json([
-                'message' => 'You cannot unfollow yourself.',
-            ], 400);
+            return response()->json(
+                ApiFormatter::error('You cannot unfollow yourself.')
+            );
         }
 
         Follow::where('follower_id', $currentStudent->id)
             ->where('followed_id', $student->id)
             ->delete();
 
-        return response()->json([
-            'message' => 'Student Unfollowed Successfully'
-        ]);
+        return response()->json(
+            ApiFormatter::success('Student Unfollowed Successfully')
+        );
     }
 
     public function index()
@@ -66,10 +67,9 @@ class FollowController extends Controller
 
         $followers = $student->followerStudents;
 
-        return response()->json([
-            'message' => 'Followers retrieved successfully.',
-            'data' => $followers,
-        ]);
+        return response()->json(
+            ApiFormatter::success('Followers retrieved successfully.', $followers)
+        );
     }
 
     public function getMyFollowing()
@@ -77,9 +77,9 @@ class FollowController extends Controller
         $user = Auth::user();
 
         if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $student = $user->student;
@@ -87,9 +87,8 @@ class FollowController extends Controller
         $following = $student->followingStudents;
 
 
-        return response()->json([
-            'message' => 'Following retrieved successfully.',
-            'data' => $following,
-        ]);
+        return response()->json(
+            ApiFormatter::success('Following retrieved successfully.', $following)
+        );
     }
 }

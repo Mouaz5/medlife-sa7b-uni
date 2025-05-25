@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CollegeController;
-use App\Http\ControllersAdmin\UniversityController;
+use App\Http\Controllers\Admin\UniversityController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\Student\AccountController;
@@ -20,6 +20,8 @@ Route::post('register/complete', [AuthController::class, 'completeRegistration']
 
 Route::post('login/otp', [AuthController::class, 'requestOTPForLogin']);
 Route::post('login/verify', [AuthController::class, 'verifyOTPForLogin']);
+
+Route::post('login', [AuthController::class, 'loginTest']);
 //admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum','admin']], function () {
     // universities (delete,update,store)

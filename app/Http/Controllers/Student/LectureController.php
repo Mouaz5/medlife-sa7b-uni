@@ -19,13 +19,10 @@ class LectureController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
         return response()->json(
-            ApiFormatter::SendResponses(
-                false,
-                Response::HTTP_CREATED,
+            ApiFormatter::success(
                 'lectures index successfully',
                 LectureResource::collection($lectures)
-            ),
-            Response::HTTP_CREATED
+            )
         );
     }
 
@@ -35,13 +32,7 @@ class LectureController extends Controller
         if ($lecture->course_id !== $course->id) {
 
             return response()->json(
-                ApiFormatter::SendResponses(
-                    true,
-                    Response::HTTP_NOT_FOUND,
-                    'This lecture does not belong to the specified course',
-                    null
-                ),
-                Response::HTTP_NOT_FOUND
+                ApiFormatter::notFound()
             );
         }
 
@@ -49,13 +40,10 @@ class LectureController extends Controller
 
         return;
         return response()->json(
-            ApiFormatter::SendResponses(
-                false,
-                Response::HTTP_OK,
+            ApiFormatter::success(
                 'lecture retrived successfully ... ',
                 new LectureResource($lecture)
-            ),
-            Response::HTTP_OK
+            )
         );
     }
 }

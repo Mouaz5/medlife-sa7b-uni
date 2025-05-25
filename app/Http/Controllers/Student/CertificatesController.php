@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentCertificates\AddStudentCertificate;
 use App\Models\Certificate;
@@ -22,28 +23,27 @@ class CertificatesController extends Controller
     {
         $user = Auth::user();
         if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $student = $user->student;
 
         $certificates = Certificate::where('student_id', $student->id)->get();
 
-        return response()->json([
-            'message' => 'Certificates retrieved successfully.',
-            'data' => $certificates,
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('Certificates retrieved successfully.', $certificates)
+        );
     }
 
     public function addCertificate(AddStudentCertificate $request)
     {
         $user = Auth::user();
         if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $student = $user->student;
@@ -58,55 +58,56 @@ class CertificatesController extends Controller
         $certificate->save();
 
 
-        return response()->json([
-            'message' => 'Certificate added successfully.',
-            'data' => $certificate,
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('Certificate added successfully.', $certificate)
+        );
     }
 
     public function deleteCertificate(Certificate $certificate)
     {
         $user = Auth::user();
         if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         if (!$certificate) {
-            return response()->json([
-                'message' => 'Certificate not found.',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $student = $user->student;
 
         if ($certificate->student_id != $student->id) {
-            return response()->json([
-                'message' => 'No Access To Delete',
-            ], 400);
+            return response()->json(
+                ApiFormatter::error('You are not authorized to delete this certificate.')
+            );
         }
 
         $certificate->delete();
 
-        return response()->json([
-            'message' => 'Certificate deleted successfully.',
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('Certificate deleted successfully.')
+        );
     }
 
     public function getStudentCertificates(Student $student)
     {
         if (!$student) {
-            return response()->json([
-                'message' => 'Student not found.',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $certificates = Certificate::where('student_id', $student->id)->get();
 
-        return response()->json([
-            'message' => 'Certificates retrieved successfully.',
-            'data' => $certificates,
-        ], 200);
+        return response()->json(
+            ApiFormatter::success(
+                'Certificates retrieved successfully.',
+                $certificates
+            )
+        );
     }
 }

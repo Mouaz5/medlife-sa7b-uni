@@ -129,7 +129,7 @@ class AuthController extends Controller
         $token = $user->createToken('login_token')->plainTextToken;
 
         return response()->json(
-            ApiFormatter::success('OTP verified successfully')
+            ApiFormatter::success('OTP verified successfully', $token)
         );
     }
 
@@ -140,5 +140,24 @@ class AuthController extends Controller
         return response()->json(
             ApiFormatter::success('Logged out successfully')
         );
+    }
+    public function loginTest(Request $request) {
+        $credentials = $request->only('email', 'password');
+        
+        $request->validate([
+            'password' => 'required|min:8',
+        ]);
+
+        if (auth()->attempt($credentials)) {
+            $user = auth()->user();
+            $token = $user->createToken($user->role)->plainTextToken;
+            return response()->json(
+                ApiFormatter::success('Logged in successfully', $token)
+            );
+        } else {
+            return response()->json(
+                ApiFormatter::error('Invalid credentials')
+            );
+        }
     }
 }

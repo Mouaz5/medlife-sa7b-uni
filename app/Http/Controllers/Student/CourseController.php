@@ -19,13 +19,7 @@ class CourseController extends Controller
         $user = Auth::user();
         if ($user->role !== 'student') {
             return response()->json(
-                ApiFormatter::SendResponses(
-                    true,
-                    Response::HTTP_FORBIDDEN,
-                    "Unauthorized",
-                    null
-                ),
-                Response::HTTP_FORBIDDEN
+                ApiFormatter::error('Unauthorized', 401)
             );
         }
 
@@ -33,13 +27,10 @@ class CourseController extends Controller
             ->where('user_id', $user->id)
             ->firstOrFail();
         return response()->json(
-            ApiFormatter::SendResponses(
-                false,
-                Response::HTTP_OK,
+            ApiFormatter::success(
                 'course retrived successfully',
                 new StudentWithCoursesResource($student)
-            ),
-            Response::HTTP_OK
+            )
         );
     }
 }

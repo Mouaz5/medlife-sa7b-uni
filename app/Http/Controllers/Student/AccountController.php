@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentAccount\UpdateStudentAccountRequest;
 use App\Http\Resources\AccountResource;
@@ -23,10 +24,11 @@ class AccountController extends Controller
     public function account()
     {
         $student = auth()->user()->student;
-        return response()->json([
-            'message' => 'Account Retrieved Successfully',
-            'data' => new AccountResource($student)
-        ]);
+        return response()->json(
+            ApiFormatter::success(
+                'Account Retrieved Successfully',
+                new AccountResource($student)
+            ));
     }
 
     public function getStudentAccount(Student $student)
@@ -42,15 +44,15 @@ class AccountController extends Controller
         $student = Auth::user();
 
         if (!$student) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $student->delete();
-        return response()->json([
-            'message' => 'Account Deleted Successfully',
-        ]);
+        return response()->json(
+            ApiFormatter::success('Account Deleted Successfully')
+        );
     }
 
 

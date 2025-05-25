@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PrivacySettings\UpdatePrivacySettingsRequest;
 use App\Http\Resources\PrivacySettingResource;
@@ -17,10 +18,12 @@ class PrivacySettingsController extends Controller
         $student = $user->student;
         $privacySettings = $student->privacySettings;
 
-        return response()->json([
-            'message' => 'Privacy Settings Retrieved Successfully',
-            'data' => new PrivacySettingResource($privacySettings)
-        ]);
+        return response()->json(
+            ApiFormatter::success(
+                'Privacy Settings Retrived Successfully',
+                new PrivacySettingResource($privacySettings)
+            )
+        );
     }
 
     public function update(UpdatePrivacySettingsRequest $request)
@@ -44,9 +47,11 @@ class PrivacySettingsController extends Controller
 
         $privacySetting->save();
 
-        return response()->json([
-            'message' => 'Privacy settings updated successfully!',
-            'data' => $privacySetting
-        ]);
+        return response()->json(
+            ApiFormatter::success(
+                'Privacy Settings Updated Successfully',
+                $privacySetting
+            )
+        );
     }
 }

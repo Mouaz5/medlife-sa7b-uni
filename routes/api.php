@@ -10,6 +10,7 @@ use App\Http\Controllers\API\Mobile\StudentCertificatesController;
 use App\Http\Controllers\API\Mobile\StudentFollowController;
 use App\Http\Controllers\API\Mobile\StudentSkillsController;
 use App\Http\Controllers\API\Mobile\UniversityController;
+use App\Http\Controllers\ComplaintController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -81,3 +82,5 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
 Route::get('college/{id}/courses', [CoursesController::class, 'getAllCourses']);
 
 
+Route::post('/store', [ComplaintController::class, 'store']);
+Route::get('/index', [ComplaintController::class, 'index']);

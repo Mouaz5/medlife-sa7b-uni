@@ -57,4 +57,9 @@ class Student extends Model
     {
         return $this->hasOne(PrivacySetting::class);
     }
+
+    public function complaints()
+    {
+        return $this->hasMany(Complaint::class);
+    }
 }

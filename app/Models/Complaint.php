@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Complaint extends Model
 {
-    /** @use HasFactory<\Database\Factories\ComplaintFactory> */
+
     use HasFactory;
     protected $fillable = [
         'title',
@@ -15,6 +15,8 @@ class Complaint extends Model
         'description',
         'student_id'
     ];
+
+    protected $with =['files'];
     public function student()
     {
         return $this->belongsTo(Student::class);

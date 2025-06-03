@@ -11,7 +11,7 @@ class AcademicGuidanceVote extends Model
     use HasFactory;
     protected $fillable = [
         'student_id',
-        'guidance_id',
+        'academic_guidance_id',
         'type'
     ];
     public function student()

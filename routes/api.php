@@ -31,6 +31,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum','admin']], fu
     // Get colleges for a specific university
     Route::get('universities/{university}/colleges', [UniversityController::class, 'colleges']);
 
+    // Admin Academic Guidance
+    Route::group(['prefix' => 'academic-guidance'], function () {
+        Route::post('/course/{course}', [App\Http\Controllers\Admin\AcademicGuidanceController::class, 'store']);
+        Route::delete('/{academicGuidance}', [App\Http\Controllers\Admin\AcademicGuidanceController::class, 'destroy']);
+    });
+
     Route::post('logout', [AuthController::class, 'logout']);
 });
 
@@ -72,6 +78,22 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
         Route::get('/', [PrivacySettingsController::class, 'index']);
         Route::patch('/', [PrivacySettingsController::class, 'update']);
     });
+
+    
+    // Academic Guidance
+    Route::group(['prefix' => 'academic-guidance'], function () {
+        Route::get('/', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'index']);
+        Route::post('/', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'store']);
+        Route::put('/{academicGuidance}', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'update']);
+        Route::delete('/{academicGuidance}', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'destroy']);
+        Route::get('/course/{course}', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'getCourseGuidance']);
+        Route::get('/filter/type', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'filterByType']);
+        Route::get('/filter/date', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'filterByDate']);
+        Route::post('/{academicGuidance}/vote', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'vote']);
+        Route::get('/{academicGuidance}/vote-stats', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'getVoteStats']);
+    });
+
+
     Route::post('logout', [AuthController::class, 'logout']);
     // Get colleges for a specific university
     Route::get('universities/{university}/colleges', [UniversityController::class, 'colleges']);
@@ -81,5 +103,10 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
     Route::apiResource('colleges', CollegeController::class)->only(['show']);
 });
 Route::get('college/{id}/courses', [CoursesController::class, 'getAllCourses']);
+
+Route::get('register/colleges', [App\Http\Controllers\AuthController::class, 'getCollegesForRegistration']);
+Route::get('register/courses', [App\Http\Controllers\AuthController::class, 'getCoursesForRegistration']);
+Route::get('register/study-years', [App\Http\Controllers\AuthController::class, 'getStudyYearsForRegistration']);
+Route::get('register/specializations', [App\Http\Controllers\AuthController::class, 'getSpecializationsForRegistration']);
 
 

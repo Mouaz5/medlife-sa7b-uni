@@ -29,9 +29,14 @@ class AuthController extends Controller
     {
         $request->validated();
         $otp = OtpService::generateOtp($request->email, 'register');
-        return response()->json(
-            ApiFormatter::success('otp sent')
-        );
+        
+        // For testing purposes, include the OTP in the response
+        return response()->json([
+            'success' => true,
+            'status' => 200,
+            'message' => 'otp sent',
+            'debug_otp' => $otp // This is for testing only
+        ]);
     }
 
     public function verifyOTPForRegistration(VerifyOTPRequest $request)

@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Mail\SendEmailOtp;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class OtpService
 {
@@ -16,8 +17,17 @@ class OtpService
         // first is making a db table and saving OTPs to it
         // second is caching
         Cache::put('otp_' . $context . '_' . $email, $otp, 300);
-        // Here Add Real OTP sending functionality
-        Mail::to($email)->send(new SendEmailOtp($otp));
+        
+        // Log the OTP for debugging
+        Log::info("Generated OTP for {$email}: {$otp}");
+        
+        // Send email
+        try {
+            Mail::to($email)->send(new SendEmailOtp($otp));
+            Log::info("OTP email sent to {$email}");
+        } catch (\Exception $e) {
+            Log::error("Failed to send OTP email: " . $e->getMessage());
+        }
 
         return $otp;
     }

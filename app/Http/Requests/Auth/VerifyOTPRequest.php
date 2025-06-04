@@ -22,7 +22,7 @@ class VerifyOTPRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'phone_number' => 'required|digits:10',
+            'email' => 'required|email',
             'otp' => 'required|digits:6',
         ];
     }
@@ -35,8 +35,8 @@ class VerifyOTPRequest extends FormRequest
     public function messages()
     {
         return [
-            'phone_number.required' => 'The phone number is required.',
-            'phone_number.digits' => 'The phone number must be exactly 10 digits.',
+            'email.required' => 'The email is required.',
+            'email.email' => 'The email must be valid.',
             'otp.required' => 'The OTP is required.',
             'otp.digits' => 'The OTP must be exactly 6 digits.',
         ];

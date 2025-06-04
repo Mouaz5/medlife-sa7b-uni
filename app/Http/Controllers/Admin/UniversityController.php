@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API\Mobile;
+namespace App\Http\Controllers\Admin;
 
+use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\University;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class UniversityController extends Controller
 {
@@ -13,23 +13,22 @@ class UniversityController extends Controller
     public function index()
     {
         $universities = University::all();
-        return response()->json($universities);
+        return response()->json(
+            ApiFormatter::success('Universites retrived', $universities)
+        );
     }
-
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|unique:universities',
+        $request->validate([
+            'name' => 'required|string|max:255|unique:universities'
         ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
+        $university = University::query()->create($request->only('name'));
 
-        $university = University::query()->create($request->all());
-
-        return response()->json($university, 201);
+        return response()->json(
+            ApiFormatter::success('University Created Successfully', $university)
+        );
     }
 
     public function show($id)
@@ -37,10 +36,14 @@ class UniversityController extends Controller
         $university = University::query()->find($id);
 
         if (!$university) {
-            return response()->json(['message' => 'University not found'], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
-        return response()->json($university);
+        return response()->json(
+            ApiFormatter::success('university', $university)
+        );
     }
 
     public function update(Request $request, $id)
@@ -51,17 +54,15 @@ class UniversityController extends Controller
             return response()->json(['message' => 'University not found'], 404);
         }
 
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|unique:universities,name,' . $id,
+        $request->validate([
+            'name' => 'required|string|max:255|unique:universities'
         ]);
-
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
 
         $university->update($request->all());
 
-        return response()->json($university);
+        return response()->json(
+            ApiFormatter::success('University Updated Successfully', $university)
+        );
     }
 
     public function destroy($id)
@@ -69,12 +70,16 @@ class UniversityController extends Controller
         $university = University::query()->find($id);
 
         if (!$university) {
-            return response()->json(['message' => 'University not found'], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $university->delete();
 
-        return response()->json(['message' => 'University deleted successfully']);
+        return response()->json(
+            ApiFormatter::success('University Deleted Successfully')
+        );
     }
     public function colleges($universityId)
     {

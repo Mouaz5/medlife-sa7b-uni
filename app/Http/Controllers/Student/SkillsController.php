@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\API\Mobile;
+namespace App\Http\Controllers\Student;
 
+use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentSkills\AddStudentSkill;
 use App\Models\Skill;
@@ -9,34 +10,33 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class StudentSkillsController extends Controller
+class SkillsController extends Controller
 {
     public function index()
     {
         $user = Auth::user();
         if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $student = $user->student;
 
         $skills = Skill::where('student_id', $student->id)->get();
 
-        return response()->json([
-            'message' => 'Skills retrieved successfully.',
-            'data' => $skills,
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('Skills retrieved successfully.', $skills)
+        );
     }
 
     public function store(AddStudentSkill $request)
     {
         $user = Auth::user();
         if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
+            return response()->json(
+                ApiFormatter::notFound()
+            );
         }
 
         $student = $user->student;
@@ -46,9 +46,9 @@ class StudentSkillsController extends Controller
             'skill' => $request->skill,
         ]);
 
-        return response()->json([
-            'message' => 'Skill added successfully.',
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('Skill added successfully.')
+        );
     }
 
     public function destroy(Skill $skill)
@@ -58,25 +58,24 @@ class StudentSkillsController extends Controller
         $student = $user->student;
 
         if ($skill->student_id != $student->id) {
-            return response()->json([
-                'message' => 'No Access To Delete',
-            ], 400);
+            return response()->json(
+                ApiFormatter::error('You are not authorized to delete this skill.')
+            );
         }
 
         $skill->delete();
 
-        return response()->json([
-            'message' => 'Skill deleted successfully.',
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('Skill deleted successfully.')
+        );
     }
 
     public function getStudentSkills(Student $student)
     {
         $skills = Skill::where('student_id', $student->id)->get();
 
-        return response()->json([
-            'message' => 'Skills retrieved successfully.',
-            'data' => $skills,
-        ], 200);
+        return response()->json(
+            ApiFormatter::success('Skills retrieved successfully.', $skills)
+        );
     }
 }

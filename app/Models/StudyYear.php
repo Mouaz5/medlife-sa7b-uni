@@ -11,7 +11,7 @@ class StudyYear extends Model
     use HasFactory;
     protected $fillable = [
         'year',
-        'collage_id'
+        'college_id'
     ];
     public function students()
     {

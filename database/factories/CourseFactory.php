@@ -20,7 +20,7 @@ class CourseFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence,
-            'collage_id' => College::inRandomOrder()->value('id'),
+            'college_id' => College::inRandomOrder()->value('id'),
             'semester_id' => Semester::inRandomOrder()->value('id'),
         ];
     }

@@ -13,16 +13,16 @@ class StudyYearSeeder extends Seeder
      */
     public function run()
     {
-        $collages = DB::table('colleges')->pluck('id')->toArray();
+        $colleges = DB::table('colleges')->pluck('id')->toArray();
 
         $studyYears = [];
-        foreach ($collages as $collageId) {
+        foreach ($colleges as $collegeId) {
             $studyYears = array_merge($studyYears, [
-                ['year' => 'first', 'collage_id' => $collageId, 'created_at' => now(), 'updated_at' => now()],
-                ['year' => 'second', 'collage_id' => $collageId, 'created_at' => now(), 'updated_at' => now()],
-                ['year' => 'third', 'collage_id' => $collageId, 'created_at' => now(), 'updated_at' => now()],
-                ['year' => 'fourth', 'collage_id' => $collageId, 'created_at' => now(), 'updated_at' => now()],
-                ['year' => 'fifth', 'collage_id' => $collageId, 'created_at' => now(), 'updated_at' => now()],
+                ['year' => 'first', 'college_id' => $collegeId, 'created_at' => now(), 'updated_at' => now()],
+                ['year' => 'second', 'college_id' => $collegeId, 'created_at' => now(), 'updated_at' => now()],
+                ['year' => 'third', 'college_id' => $collegeId, 'created_at' => now(), 'updated_at' => now()],
+                ['year' => 'fourth', 'college_id' => $collegeId, 'created_at' => now(), 'updated_at' => now()],
+                ['year' => 'fifth', 'college_id' => $collegeId, 'created_at' => now(), 'updated_at' => now()],
             ]);
         }
 

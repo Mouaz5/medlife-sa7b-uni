@@ -22,7 +22,7 @@ class AccountResource extends JsonResource
             'username' => $this->user->username,
             'phone_number' => $this->phone_number,
             'image' => $this->image,
-            'collage_name' => $this->collage->name,
+            'college_name' => $this->college->name,
             'linkedIn_account' => $this->linkedIn_account,
             'facebook_account' => $this->facebook_account,
             'github_account' => $this->github_account,

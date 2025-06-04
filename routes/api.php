@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\API\Mobile\AuthController;
 use App\Http\Controllers\API\Mobile\CollegeController;
 use App\Http\Controllers\API\Mobile\CoursesController;
@@ -11,6 +12,16 @@ use App\Http\Controllers\API\Mobile\StudentFollowController;
 use App\Http\Controllers\API\Mobile\StudentSkillsController;
 use App\Http\Controllers\API\Mobile\UniversityController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\Admin\CollegeController;
+use App\Http\Controllers\Admin\UniversityController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\Student\AccountController;
+use App\Http\Controllers\Student\CertificatesController;
+use App\Http\Controllers\Student\FollowController;
+use App\Http\Controllers\Student\PrivacySettingsController;
+use App\Http\Controllers\Student\SearchController;
+use App\Http\Controllers\Student\SkillsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +32,8 @@ Route::post('register/complete', [AuthController::class, 'completeRegistration']
 
 Route::post('login/otp', [AuthController::class, 'requestOTPForLogin']);
 Route::post('login/verify', [AuthController::class, 'verifyOTPForLogin']);
+
+Route::post('login', [AuthController::class, 'loginTest']);
 //admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum','admin']], function () {
     // universities (delete,update,store)
@@ -36,10 +49,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum','admin']], fu
 Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']], function () {
     // Account
     Route::group(['prefix' => 'account'], function () {
-        Route::get('/', [StudentAccountController::class, 'account']);
-        Route::get('/{student}', [StudentAccountController::class, 'getStudentAccount']);
-        Route::patch('update', [StudentAccountController::class, 'updateAccount']);
-        Route::delete('delete', [StudentAccountController::class, 'deleteAccount']);
+        Route::get('/', [AccountController::class, 'account']);
+        Route::get('/{student}', [AccountController::class, 'getStudentAccount']);
+        Route::patch('update', [AccountController::class, 'updateAccount']);
+        Route::delete('delete', [AccountController::class, 'deleteAccount']);
     });
     // Search
     Route::group(['prefix' => 'search'], function () {
@@ -47,24 +60,24 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
     });
     // Skills
     Route::group(['prefix' => 'skills'], function () {
-        Route::get('/', [StudentSkillsController::class, 'index']);
-        Route::get('/{student}', [StudentSkillsController::class, 'getStudentSkills']);
-        Route::post('/', [StudentSkillsController::class, 'store']);
-        Route::delete('/{skill}', [StudentSkillsController::class, 'destroy']);
+        Route::get('/', [SkillsController::class, 'index']);
+        Route::get('/{student}', [SkillsController::class, 'getStudentSkills']);
+        Route::post('/', [SkillsController::class, 'store']);
+        Route::delete('/{skill}', [SkillsController::class, 'destroy']);
     });
     // Certificates
     Route::group(['prefix' => 'certificates'], function () {
-        Route::get('/', [StudentCertificatesController::class, 'getMyCertificates']);
-        Route::get('{student}/student', [StudentCertificatesController::class, 'getStudentCertificates']);
-        Route::post('/', [StudentCertificatesController::class, 'addCertificate']);
-        Route::delete('/{certificate}', [StudentCertificatesController::class, 'deleteCertificate']);
+        Route::get('/', [CertificatesController::class, 'getMyCertificates']);
+        Route::get('{student}/student', [CertificatesController::class, 'getStudentCertificates']);
+        Route::post('/', [CertificatesController::class, 'addCertificate']);
+        Route::delete('/{certificate}', [CertificatesController::class, 'deleteCertificate']);
     });
     // Follow
     Route::group(['prefix' => 'followers'], function () {
-        Route::get('/', [StudentFollowController::class, 'index']);
-        Route::get('/following', [StudentFollowController::class, 'getMyFollowing']);
-        Route::post('/{student}/follow', [StudentFollowController::class, 'followStudent']);
-        Route::post('/{student}/unfollow', [StudentFollowController::class, 'unfollowStudent']);
+        Route::get('/', [FollowController::class, 'index']);
+        Route::get('/following', [FollowController::class, 'getMyFollowing']);
+        Route::post('/{student}/follow', [FollowController::class, 'followStudent']);
+        Route::post('/{student}/unfollow', [FollowController::class, 'unfollowStudent']);
     });
     // Privacy
     Route::group(['prefix' => 'privacy'], function () {

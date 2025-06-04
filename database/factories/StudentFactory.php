@@ -25,7 +25,7 @@ class StudentFactory extends Factory
             'phone_number' => $this->faker->phoneNumber,
             'image' => $this->faker->imageUrl(640, 480, 'people'),
             'user_id' => User::inRandomOrder()->value('id'),
-            'collage_id' => College::inRandomOrder()->value('id'),
+            'college_id' => College::inRandomOrder()->value('id'),
         ];
     }
 }

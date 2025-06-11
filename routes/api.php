@@ -7,6 +7,7 @@ use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\Student\AccountController;
 use App\Http\Controllers\Student\CertificatesController;
 use App\Http\Controllers\Student\FollowController;
+use App\Http\Controllers\Student\PostController;
 use App\Http\Controllers\Student\PrivacySettingsController;
 use App\Http\Controllers\Student\SearchController;
 use App\Http\Controllers\Student\SkillsController;
@@ -72,6 +73,13 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
         Route::get('/following', [FollowController::class, 'getMyFollowing']);
         Route::post('/{student}/follow', [FollowController::class, 'followStudent']);
         Route::post('/{student}/unfollow', [FollowController::class, 'unfollowStudent']);
+    });
+    Route::group(['prefix' => 'posts'], function () {
+        Route::get('/', [PostController::class, 'index']);
+        Route::get('/{post}', [PostController::class, 'show']);
+        Route::post('/', [PostController::class, 'store']);
+        Route::put('/{post}', [PostController::class, 'update']);
+        Route::delete('/{post}', [PostController::class, 'destroy']);
     });
     // Privacy
     Route::group(['prefix' => 'privacy'], function () {

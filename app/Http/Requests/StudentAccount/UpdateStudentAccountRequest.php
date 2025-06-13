@@ -26,6 +26,8 @@ class UpdateStudentAccountRequest extends FormRequest
             'middle_name' => 'sometimes|string|max:255',
             'last_name' => 'sometimes|string|max:255',
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'bio' => 'sometimes|string|max:255',
+            'phone_number' => 'sometimes|digits:10',
             'linkedIn_account' => 'sometimes|url|nullable',
             'facebook_account' => 'sometimes|url|nullable',
             'github_account' => 'sometimes|url|nullable',

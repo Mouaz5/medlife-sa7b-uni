@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('complaints', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->enum('visibility', ['public', 'private'])->default('public');
-            $table->foreignId('course_id')->nullable()->constrained('courses')->cascadeOnDelete();
+            $table->foreignId('type_id')->constrained('complaint_types')->cascadeOnDelete();
             $table->foreignId('student_id')->constrained('students')->cascadeOnDelete();
             $table->timestamps();
         });
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('complaints');
     }
 };

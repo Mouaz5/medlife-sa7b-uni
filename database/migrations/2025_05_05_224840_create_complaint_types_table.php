@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('complaints', function (Blueprint $table) {
+        Schema::create('complaint_types', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->enum('type', ['bug', 'suggestion', 'other'])->default('other');
-            $table->text('description');
-            $table->foreignId('student_id')->constrained('students')->cascadeOnDelete();
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('complaints');
+        Schema::dropIfExists('complaint_types');
     }
 };

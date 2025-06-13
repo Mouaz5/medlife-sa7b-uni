@@ -11,13 +11,17 @@ class Complaint extends Model
     use HasFactory;
     protected $fillable = [
         'title',
-        'type',
+        'type_id',
         'description',
         'student_id'
     ];
     public function student()
     {
         return $this->belongsTo(Student::class);
+    }
+    public function type()
+    {
+        return $this->belongsTo(ComplaintType::class);
     }
     public function files()
     {

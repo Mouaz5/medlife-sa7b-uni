@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\ComplaintType;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,8 +20,8 @@ class ComplaintFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
-            'type' => $this->faker->randomElement(['other', 'suggestion', 'bug']),
-            'description' => $this->faker->paragraph,
+            'type_id' => ComplaintType::inRandomOrder()->value('id'),
+            'description' => $this->faker->sentence,
             'student_id' => Student::inRandomOrder()->value('id'),
         ];
     }

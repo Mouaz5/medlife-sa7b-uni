@@ -13,7 +13,8 @@ class Post extends Model
         'title',
         'description',
         'visibility',
-        'student_id'
+        'student_id',
+        'course_id'
     ];
     public function student()
     {
@@ -22,5 +23,9 @@ class Post extends Model
     public function files()
     {
         return $this->hasMany(PostFile::class);
+    }
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
     }
 }

@@ -12,15 +12,17 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index() {
-        $posts = Post::with('files')->get();
-        return PostResource::collection($posts);
+        $posts = Post::with('files')->latest()->get();
+        return response()->json(
+            ApiFormatter::success('Posts retrieved successfully.',
+            PostResource::collection($posts))
+        );
     }
     public function show(Post $post) {
-        if ($post->student_id !== auth()->user()->student->id) {
-            abort(404, 'You are not authorized to view this post.');
-        }
         $post->load(['files']);
-        return new PostResource($post);
+        return response()->json(
+            ApiFormatter::success('Post retrieved successfully.', new PostResource($post))
+        );
     }
     public function store(Request $request)
     {
@@ -51,16 +53,42 @@ class PostController extends Controller
         ]);
 
     }
-    public function update(Post $post, Request $request) {
-
+    public function update(Request $request, Post $post) {
+        if ($post->student_id !== auth()->user()->student->id) {
+            abort(404, 'You are not authorized to update this post.');
+        }
+        $validated = $request->validate([
+            'title' => 'sometimes|required|string|min:5',
+            'description' => 'sometimes|required|string|min:10',
+            'visibility' => 'sometimes|required|in:public,private',
+            'files' => 'sometimes|array|nullable'
+        ]);
+        $validated = array_filter($validated, function($value) {
+            return !is_null($value);
+        });
+        
+        if ($request->hasFile('files')) {
+            foreach ($request->file('files') as $file) {
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $file->storeAs('public/posts', $fileName);
+                PostFile::create([
+                    'post_id' => $post->id,
+                    'file' => 'posts/' . $fileName
+                ]);
+            }
+        }
+        $post->update($validated);
+        return response()->json([
+            ApiFormatter::success('Post updated successfully.', $post->load(['files']))
+        ]);
     }
     public function destroy(Post $post) {
         if ($post->student_id !== auth()->user()->student->id) {
             abort(404, 'You are not authorized to delete this post.');
         }
         $post->delete();
-        return response()->json([
+        return response()->json(
             ApiFormatter::success('Post deleted successfully.')
-        ]);
+        );
     }
 }

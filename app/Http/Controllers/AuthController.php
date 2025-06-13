@@ -14,14 +14,15 @@ use App\Models\PrivacySetting;
 use App\Models\Semester;
 use App\Models\Specialization;
 use App\Models\Student;
-use App\Models\StudentAcademicTimeline;
-use App\Models\StudentCourse;
-use App\Models\StudyYear;
+use Illuminate\Support\Str;
+use Illuminate\Http\JsonResponse;
 use App\Models\User;
 use App\Services\OtpService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Helpers\ApiFormatter;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -55,59 +56,59 @@ class AuthController extends Controller
 
     public function completeRegistration(CompleteRegistrationRequest $request)
     {
-        $user = User::create([
-            'username' => $request->first_name . '_' . $request->last_name . '_' . $request->phone_number,
-            'role' => 'student',
-            'email' => $request->email,
-            'password' => null,
-        ]);
-
-        $college = College::where('name', $request->college)->first();
-        $study_year = StudyYear::where('year', $request->study_year)
-            ->where('college_id', $college->id)
-            ->first();
-
-        $academic_year = AcademicYear::where('year', date('Y'))->first();
-        $specialization = Specialization::where('name', $request->specialization)->first();
-
-        $semesters = Semester::where('study_year_id', $study_year->id)
-            ->where('academic_year_id', $academic_year->id)
-            ->get();
-
-        $semesters_ids = $semesters->pluck('id');
-
-        $year_courses = Course::whereIn('semester_id', $semesters_ids)
-            ->where('college_id', $college->id)
-            ->get();
-
-        $student = Student::create(array_merge($request->validated(), [
-            'user_id' => $user->id,
-            'college_id' => $college->id
-        ]));
-
-        $chosen_courses = $request->courses;
-        $year_course_ids = $year_courses->pluck('id')->toArray();
-        $all_courses = array_unique(array_merge($year_course_ids, $chosen_courses));
-        foreach ($all_courses as $course_id) {
-            StudentCourse::create([
-                'student_id' => $student->id,
-                'course_id' => $course_id
+        $registrationData = $request->validated();
+        DB::beginTransaction();
+        try {
+            // Create User
+            $user = User::create([
+                'username' => $registrationData['first_name'] . ' ' . $registrationData['last_name'],
+                'email' => $registrationData['email'],
+                'password' => Hash::make($registrationData['password']),
+                'email_verified_at' => now(),
+                'role' => 'student',
             ]);
+
+            $student = Student::create([
+                'user_id' => $user->id,
+                'first_name' => $registrationData['first_name'],
+                'last_name' => $registrationData['last_name'],
+                'college_id' => $registrationData['college_id'],
+            ]);
+
+            PrivacySetting::create([
+                'student_id' => $student->id,
+                'show_posts' => true,
+                'profile_visibility' => 'public',
+            ]);
+
+            $currentAcademicYear = AcademicYear::orderBy('year', 'desc')->first();
+            if (!$currentAcademicYear) {
+                 DB::rollBack();
+                return response()->json(ApiFormatter::error('Academic year not found. Cannot complete registration.', null), 500);
+            }
+
+            // StudentAcademicTimeline::create([
+            //     'student_id' => $student->id,
+            //     'study_year_id' => $registrationData['study_year_id'],
+            //     'specialization_id' => $registrationData['specialization_id'],
+            //     'academic_year_id' => $currentAcademicYear->id,
+            // ]);
+
+            DB::commit();
+
+
+            $token = $user->createToken('api-token-' . Str::slug($user->name))->plainTextToken;
+
+            return response()->json(ApiFormatter::success('Registration successful. Welcome!', [
+                'user' => $user->load('student'), // Load student relationship
+                'token_type' => 'Bearer',
+                'access_token' => $token,
+            ]), 201);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json(ApiFormatter::error('Registration failed. Please try again later.', ['server_error' => $e->getMessage()]), 500);
         }
-
-        PrivacySetting::create(['student_id' => $student->id]);
-        StudentAcademicTimeline::create([
-            'study_year_id' => $study_year->id,
-            'student_id' => $student->id,
-            'specialization_id' => $specialization->id,
-            'academic_year_id' => $academic_year->id
-        ]);
-
-        $token = $user->createToken('register_token')->plainTextToken;
-
-        return response()->json(
-            ApiFormatter::success('Registration Completed Successfully')
-        );
     }
 
     public function requestOTPForLogin(RequestOTPForLoginRequest $request)

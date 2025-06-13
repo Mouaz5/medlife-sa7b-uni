@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
-            $table->string('middle_name');
+            $table->string('middle_name')->nullable();
             $table->string('last_name');
-            $table->string('phone_number');
+            $table->text('bio')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('image')->nullable();
             $table->string('linkedIn_account')->nullable();
             $table->string('facebook_account')->nullable();

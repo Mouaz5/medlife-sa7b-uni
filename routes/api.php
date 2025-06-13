@@ -4,25 +4,25 @@ use App\Http\Controllers\Admin\CollegeController;
 use App\Http\Controllers\Admin\UniversityController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\Student\AccountController;
 use App\Http\Controllers\Student\CertificatesController;
+use App\Http\Controllers\Student\ComplaintController;
 use App\Http\Controllers\Student\FollowController;
 use App\Http\Controllers\Student\PostController;
 use App\Http\Controllers\Student\PrivacySettingsController;
 use App\Http\Controllers\Student\SearchController;
 use App\Http\Controllers\Student\SkillsController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// Start Auth
 Route::post('register/otp', [AuthController::class, 'requestOTPForRegistration']);
 Route::post('register/verify', [AuthController::class, 'verifyOTPForRegistration']);
-Route::post('register/complete', [AuthController::class, 'completeRegistration']); // needs fixing
+Route::post('register/complete', [AuthController::class, 'completeRegistration']);
 
 Route::post('login/otp', [AuthController::class, 'requestOTPForLogin']);
 Route::post('login/verify', [AuthController::class, 'verifyOTPForLogin']);
-
 Route::post('login', [AuthController::class, 'loginTest']);
+
 //admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum','admin']], function () {
     // universities (delete,update,store)
@@ -46,7 +46,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
     Route::group(['prefix' => 'account'], function () {
         Route::get('/', [AccountController::class, 'account']);
         Route::get('/{student}', [AccountController::class, 'getStudentAccount']);
-        Route::patch('update', [AccountController::class, 'updateAccount']);
+        Route::post('update', [AccountController::class, 'updateAccount']);
         Route::delete('delete', [AccountController::class, 'deleteAccount']);
     });
     // Search
@@ -56,7 +56,8 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
     // Skills
     Route::group(['prefix' => 'skills'], function () {
         Route::get('/', [SkillsController::class, 'index']);
-        Route::get('/{student}', [SkillsController::class, 'getStudentSkills']);
+        Route::get('/my-skills', [SkillsController::class, 'mySkills']);
+        Route::get('students/{student}', [SkillsController::class, 'getStudentSkills']);
         Route::post('/', [SkillsController::class, 'store']);
         Route::delete('/{skill}', [SkillsController::class, 'destroy']);
     });
@@ -80,6 +81,13 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
         Route::post('/', [PostController::class, 'store']);
         Route::put('/{post}', [PostController::class, 'update']);
         Route::delete('/{post}', [PostController::class, 'destroy']);
+    });
+    Route::group(['prefix' => 'complaints'], function () {
+        Route::get('/', [ComplaintController::class, 'index']);
+        Route::get('/{complaint}', [ComplaintController::class, 'show']);
+        Route::post('/send', [ComplaintController::class, 'store']);
+        Route::put('/{post}', [ComplaintController::class, 'update']);
+        Route::delete('/{post}', [ComplaintController::class, 'destroy']);
     });
     // Privacy
     Route::group(['prefix' => 'privacy'], function () {
@@ -116,5 +124,3 @@ Route::get('register/colleges', [App\Http\Controllers\AuthController::class, 'ge
 Route::get('register/courses', [App\Http\Controllers\AuthController::class, 'getCoursesForRegistration']);
 Route::get('register/study-years', [App\Http\Controllers\AuthController::class, 'getStudyYearsForRegistration']);
 Route::get('register/specializations', [App\Http\Controllers\AuthController::class, 'getSpecializationsForRegistration']);
-
-

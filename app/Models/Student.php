@@ -14,6 +14,7 @@ class Student extends Model
         'middle_name',
         'last_name',
         'phone_number',
+        'bio',
         'image',
         'user_id',
         'college_id',
@@ -27,7 +28,26 @@ class Student extends Model
         return "{$this->first_name} {$this->middle_name} {$this->last_name}";
     }
 
-
+    public function complaints()
+    {
+        return $this->hasMany(Complaint::class);
+    }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+    public function skills()
+    {
+        return $this->hasMany(Skill::class);
+    }
+    public function certificates()
+    {
+        return $this->hasMany(Certificate::class);
+    }
+    public function followers()
+    {
+        return $this->belongsToMany(Student::class, 'foreign_key', 'local_key');
+    }
     public function courses()
 {
     return $this->belongsToMany(Course::class, 'student_courses');

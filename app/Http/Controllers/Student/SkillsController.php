@@ -12,7 +12,14 @@ use Illuminate\Support\Facades\Auth;
 
 class SkillsController extends Controller
 {
-    public function index()
+    public function index() {
+        return response()->json(
+            ApiFormatter::success(
+                'Skills retrieved successfully.',
+                Skill::all()
+            ));
+    }
+    public function mySkills()
     {
         $user = Auth::user();
         if (!$user) {

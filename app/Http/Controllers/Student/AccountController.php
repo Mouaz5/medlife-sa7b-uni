@@ -69,18 +69,17 @@ class AccountController extends Controller
 
         $student = $user->student;
 
-        foreach ($validated as $key => $value) {
-            if (!is_null($value)) {
-                $student->$key = $value;
-            }
-        }
+        $validated = array_filter($validated, function($value) {
+            return !is_null($value);
+        });
         if ($request->hasFile('image')) {
-            $student['image'] = $this->uploadService->uploadFile($request, 'image', 'students');
+            $validated['image'] = $this->uploadService->uploadFile($request, 'image', 'students');
         }
-        $student->save();
+        $user->update($validated);
+        $student->update($validated);
 
-        return response()->json([
-            'message' => 'Student Account updated successfully!',
-        ]);
+        return response()->json(
+            ApiFormatter::success('Account Updated Successfully')
+        );
     }
 }

@@ -25,7 +25,6 @@ class RequestOTPForLoginRequest extends FormRequest
             'email' => [
                 'required',
                 'email',
-                'unique:users:email'
             ],
         ];
     }
@@ -40,7 +39,6 @@ class RequestOTPForLoginRequest extends FormRequest
         return [
             'email.required' => 'The email address is required.',
             'email.email' => 'Please enter a valid email address.',
-            'email.unique' => 'This email is already registered.',
         ];
     }
 }

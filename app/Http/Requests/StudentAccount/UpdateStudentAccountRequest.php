@@ -32,6 +32,8 @@ class UpdateStudentAccountRequest extends FormRequest
             'facebook_account' => 'sometimes|url|nullable',
             'github_account' => 'sometimes|url|nullable',
             'x_account' => 'sometimes|url|nullable',
+            'skills' => 'sometimes|array',
+            'academic_year_id' => 'sometimes|exists:academic_years,id',
         ];
     }
 }

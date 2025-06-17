@@ -6,10 +6,10 @@ use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentAccount\UpdateStudentAccountRequest;
 use App\Http\Resources\AccountResource;
+use App\Models\Skill;
 use App\Models\Student;
-use App\Services\FileUploadService;
+use App\Models\StudentAcademicTimeline;
 use App\Services\UploadService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
@@ -61,22 +61,47 @@ class AccountController extends Controller
         $validated = $request->validated();
 
         $user = Auth::user();
-        if (!$user) {
-            return response()->json([
-                'message' => 'Account Not Found',
-            ], 404);
-        }
 
         $student = $user->student;
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $this->uploadService->uploadFile($request, 'image', 'students');
+        }
+        $skills = $request->input('skills', null);
+        unset($validated['skills']);
+
+        $academicYearId = $request->input('academic_year_id', null);
+        unset($validated['academic_year_id']);
 
         $validated = array_filter($validated, function($value) {
             return !is_null($value);
         });
-        if ($request->hasFile('image')) {
-            $validated['image'] = $this->uploadService->uploadFile($request, 'image', 'students');
-        }
+
         $user->update($validated);
         $student->update($validated);
+
+        if ($skills !== null) {
+            $student->skills()->whereIn('skill', $skills)->delete();
+            
+            $existingSkills = $student->skills()->pluck('skill')->toArray();
+            
+            $newSkills = array_filter($skills, function($skill) use ($existingSkills) {
+                return !in_array($skill, $existingSkills);
+            });
+            
+            if (!empty($newSkills)) {
+                $skillsData = array_map(function($skill) use ($student) {
+                    return [
+                        'student_id' => $student->id,
+                        'skill' => $skill,
+                    ];
+                }, $newSkills);
+                
+                Skill::insert($skillsData);
+            }
+        }
+
+        StudentAcademicTimeline::where('academic_year_id', $academicYearId)->update(['student_id' => $student->id]);
 
         return response()->json(
             ApiFormatter::success('Account Updated Successfully')

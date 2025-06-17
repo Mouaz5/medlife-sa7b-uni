@@ -1,0 +1,2558 @@
+{
+	"info": {
+		"_postman_id": "bf3c779c-e444-4719-bfa4-35a6335e3c67",
+		"name": "Sa7b_صاحب",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33303261",
+		"_collection_link": "https://universal-spaceship-608942.postman.co/workspace/My-Workspace~19a5289a-8ab2-45fb-8a68-24967d3a7550/collection/33303261-bf3c779c-e444-4719-bfa4-35a6335e3c67?action=share&source=collection_link&creator=33303261"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "register_third_step",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "Mouaz",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Abbas",
+											"type": "text"
+										},
+										{
+											"key": "study_year_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "college_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mouazabbas@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password123",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "password123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/register/complete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"register",
+										"complete"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "register_third_step",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "first_name",
+													"value": "Mouaz",
+													"type": "text"
+												},
+												{
+													"key": "last_name",
+													"value": "Abbas",
+													"type": "text"
+												},
+												{
+													"key": "study_year_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "college_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "benjaminawad790@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password123",
+													"type": "text"
+												},
+												{
+													"key": "password_confirmation",
+													"value": "password123",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/register/complete",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"register",
+												"complete"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 13:26:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Registration successful. Welcome!\",\n    \"data\": {\n        \"user\": {\n            \"username\": \"Mouaz Abbas\",\n            \"email\": \"mouazabbas@gmail.com\",\n            \"role\": \"student\",\n            \"updated_at\": \"2025-06-13T13:26:11.000000Z\",\n            \"created_at\": \"2025-06-13T13:26:11.000000Z\",\n            \"id\": 2,\n            \"student\": {\n                \"id\": 31,\n                \"first_name\": \"Mouaz\",\n                \"middle_name\": null,\n                \"last_name\": \"Abbas\",\n                \"bio\": null,\n                \"phone_number\": null,\n                \"image\": null,\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 2,\n                \"college_id\": 2,\n                \"created_at\": \"2025-06-13T13:26:11.000000Z\",\n                \"updated_at\": \"2025-06-13T13:26:11.000000Z\"\n            }\n        },\n        \"token_type\": \"Bearer\",\n        \"access_token\": \"1|DX1PPg3ACQFNFRzTvv9cAF23uusAxF8xfMwKrokb24b8eccf\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "register_second_step",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "benjaminawad790@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "377454",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/register/verify",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"register",
+										"verify"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "register_second_step",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "benjaminawad790@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "otp",
+													"value": "377454",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/register/verify",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"register",
+												"verify"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 13:25:46 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"OTP verified successfully. Please continue with registration.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "register_first_step",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "benjaminawad790@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/register/otp",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"register",
+										"otp"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "register_first_step",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "benjaminawad790@gmail.com",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/register/otp",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"register",
+												"otp"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 13:25:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"otp sent\",\n    \"debug_otp\": \"377454\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "login_first_step",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "test@example.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/login/otp",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"login",
+										"otp"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "login_first_step",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "test@example.com",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/login/otp",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"login",
+												"otp"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Jun 2025 10:26:25 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"otp sent, check your email\"\n}"
+								}
+							]
+						},
+						{
+							"name": "login_second_step",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "test@example.com",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "856239",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/login/verify",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"login",
+										"verify"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "login_second_step",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "test@example.com",
+													"type": "text"
+												},
+												{
+													"key": "otp",
+													"value": "856239",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/login/verify",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"login",
+												"verify"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Jun 2025 10:27:30 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "{\n    \"success\": false,\n    \"status\": 400,\n    \"message\": \"OTP Verification successfully\",\n    \"token\": \"DX1PPg3ACQFNFRzTvv9cAF23uusAxF8xfMwKrokb24b8eccf\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "University",
+					"item": [
+						{
+							"name": "عرض الجامعات",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/admin/universities",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"universities"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "عرض الجامعات",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/admin/universities",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"universities"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 25 May 2025 23:23:03 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Universites retrived\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Damascus University\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Syrian Private University\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Syrian Virtual University\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Higher Institute of Business Administration\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Higher Institute of Applied Sciences and Technology\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Al Rasheed International Private University for Science and Technology\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Al-Sham Private University\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Bilad Al Sham University\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Qasyoun University for Science and Technology\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Yarmouk Private University\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"International University for Science and Technology\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Al Jazeera University\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Arab International University\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"National Institute for Public Administration\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Higher Institute of Dramatic Arts\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Higher Institute of Music\",\n            \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n            \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "أضافة جامعة",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "الرشيد",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/admin/universities",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"universities"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "أضافة جامعة",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "الرشيد",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/admin/universities",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"universities"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 25 May 2025 23:23:25 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"University Created Successfully\",\n    \"data\": {\n        \"name\": \"الرشيد\",\n        \"updated_at\": \"2025-05-25T23:23:25.000000Z\",\n        \"created_at\": \"2025-05-25T23:23:25.000000Z\",\n        \"id\": 17\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "عرض تفاصيل جامعة",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/universities/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"universities",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/universities/1",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"universities",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 25 May 2025 23:24:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"university\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Damascus University\",\n        \"created_at\": \"2025-05-18T17:53:07.000000Z\",\n        \"updated_at\": \"2025-05-18T17:53:07.000000Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "تعديل معلومات جامعة",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "حذف جامعة",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/universities/17",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"universities",
+										"17"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "حذف جامعة",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/admin/universities/17",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"admin",
+												"universities",
+												"17"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 25 May 2025 23:24:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"University Deleted Successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Colleges",
+					"item": [
+						{
+							"name": "عرض جميع الكليات",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "اضافة كلية جديدة",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "عرض تفاصيل كلية",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "qLzOjR4Nds836VAZK4MoxUeB26Fyhaz3K2IkbhIHc7b9577f",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "my_account",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/account",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"account"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/account",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"account"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 13:32:30 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Account Retrieved Successfully\",\n    \"data\": {\n        \"id\": 31,\n        \"first_name\": \"Mouaz\",\n        \"middle_name\": null,\n        \"last_name\": \"Abbas\",\n        \"username\": \"Mouaz Abbas\",\n        \"phone_number\": null,\n        \"image\": null,\n        \"college_name\": \"Faculty of Dentistry\",\n        \"linkedIn_account\": null,\n        \"facebook_account\": null,\n        \"github_account\": null,\n        \"x_account\": null,\n        \"created_at\": \"2025-06-13T13:26:11.000000Z\",\n        \"updated_at\": \"2025-06-13T13:26:11.000000Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get_student_account_by_id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/student/account/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"account",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get_student_account_by_id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/student/account/2",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"account",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 13:34:37 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Account Retrieved Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"first_name\": \"Ramiro\",\n        \"middle_name\": \"Kessler\",\n        \"last_name\": \"Zboncak\",\n        \"username\": \"test_user\",\n        \"phone_number\": \"210-599-2524\",\n        \"image\": \"https://via.placeholder.com/640x480.png/00aaff?text=people+nulla\",\n        \"college_name\": \"Faculty of Medicine\",\n        \"linkedIn_account\": null,\n        \"facebook_account\": null,\n        \"github_account\": null,\n        \"x_account\": null,\n        \"created_at\": \"2025-06-13T13:08:12.000000Z\",\n        \"updated_at\": \"2025-06-13T13:08:12.000000Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update_my_account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "Mouaz1",
+											"type": "text"
+										},
+										{
+											"key": "middle_name",
+											"value": "Mohamed",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Abbas1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-07 13-00-13.png"
+										},
+										{
+											"key": "linkedIn_account",
+											"value": "https://mouaz.abbas.linkedin.com",
+											"type": "text"
+										},
+										{
+											"key": "facebook_account",
+											"value": "https://mouaz.abbas.facebook.com",
+											"type": "text"
+										},
+										{
+											"key": "github_account",
+											"value": "https://mouaz.abbas.github.com",
+											"type": "text"
+										},
+										{
+											"key": "x_account",
+											"value": "https://mouaz.abbas.x.com",
+											"type": "text"
+										},
+										{
+											"key": "bio",
+											"value": "Cyber Security Engineer",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "0938249138",
+											"type": "text"
+										},
+										{
+											"key": "skills[0]",
+											"value": "flutter developer and cyber",
+											"type": "text"
+										},
+										{
+											"key": "skills[1]",
+											"value": "laravel developer",
+											"type": "text"
+										},
+										{
+											"key": "academic_year_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/account/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"account",
+										"update"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update_my_account",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "first_name",
+													"value": "Mouaz1",
+													"type": "text"
+												},
+												{
+													"key": "middle_name",
+													"value": "Mohamed",
+													"type": "text"
+												},
+												{
+													"key": "last_name",
+													"value": "Abbas1",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-07 13-00-13.png"
+												},
+												{
+													"key": "linkedIn_account",
+													"value": "https://mouaz.abbas.linkedin.com",
+													"type": "text"
+												},
+												{
+													"key": "facebook_account",
+													"value": "https://mouaz.abbas.facebook.com",
+													"type": "text"
+												},
+												{
+													"key": "github_account",
+													"value": "https://mouaz.abbas.github.com",
+													"type": "text"
+												},
+												{
+													"key": "x_account",
+													"value": "https://mouaz.abbas.x.com",
+													"type": "text"
+												},
+												{
+													"key": "bio",
+													"value": "Cyber Security Engineer",
+													"type": "text"
+												},
+												{
+													"key": "phone_number",
+													"value": "0938249138",
+													"type": "text"
+												},
+												{
+													"key": "skills[0]",
+													"value": "flutter developer and cyber",
+													"type": "text"
+												},
+												{
+													"key": "skills[1]",
+													"value": "laravel developer",
+													"type": "text"
+												},
+												{
+													"key": "academic_year_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/account/update",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"account",
+												"update"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Jun 2025 10:17:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Account Updated Successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete_my_account",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/account/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"account",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Skills/Experiences",
+					"item": [
+						{
+							"name": "all_skills",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/skills",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"skills"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "all_skills",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/skills",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"skills"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 14:09:37 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Skills retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"skill\": \"ut\",\n            \"student_id\": 6,\n            \"created_at\": \"2025-06-13T13:08:49.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:49.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"skill\": \"non\",\n            \"student_id\": 9,\n            \"created_at\": \"2025-06-13T13:08:49.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:49.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"skill\": \"tempora\",\n            \"student_id\": 4,\n            \"created_at\": \"2025-06-13T13:08:49.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:49.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"skill\": \"voluptatem\",\n            \"student_id\": 1,\n            \"created_at\": \"2025-06-13T13:08:50.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:50.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"skill\": \"facere\",\n            \"student_id\": 8,\n            \"created_at\": \"2025-06-13T13:08:50.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:50.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"skill\": \"enim\",\n            \"student_id\": 4,\n            \"created_at\": \"2025-06-13T13:08:51.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:51.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"skill\": \"voluptate\",\n            \"student_id\": 3,\n            \"created_at\": \"2025-06-13T13:08:51.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:51.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"skill\": \"id\",\n            \"student_id\": 7,\n            \"created_at\": \"2025-06-13T13:08:51.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:51.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"skill\": \"consequatur\",\n            \"student_id\": 1,\n            \"created_at\": \"2025-06-13T13:08:52.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:52.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"skill\": \"qui\",\n            \"student_id\": 4,\n            \"created_at\": \"2025-06-13T13:08:52.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:52.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "my_skills",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/skills/my-skills",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"skills",
+										"my-skills"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "my_skills",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/skills/my-skills",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"skills",
+												"my-skills"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 14:12:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Skills retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 11,\n            \"skill\": \"Flutter Developer\",\n            \"student_id\": 31,\n            \"created_at\": \"2025-06-13T14:12:31.000000Z\",\n            \"updated_at\": \"2025-06-13T14:12:31.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get_student_skill",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/skills/students/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"skills",
+										"students",
+										"3"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get_student_skills",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/skills/students/3",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"skills",
+												"students",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 14:13:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Skills retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"skill\": \"voluptate\",\n            \"student_id\": 3,\n            \"created_at\": \"2025-06-13T13:08:51.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:51.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "add_new_skill",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "skill",
+											"value": "Flutter Developer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/skills",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"skills"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add_new_skill",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "skill",
+													"value": "Flutter Developer",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/skills",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"skills"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 14:12:31 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Skill added successfully.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete_skill",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/student/skills/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"skills",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Posts",
+					"item": [
+						{
+							"name": "all_posts",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/student/posts",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"posts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "all_posts",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/student/posts",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"posts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 15:03:39 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Posts retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 9,\n            \"title\": \"Maxime aspernatur ea soluta quo hic omnis enim.\",\n            \"description\": \"Aut harum fugit sequi temporibus veniam nam voluptas et. A minus aut fugiat.\",\n            \"visibility\": \"private\",\n            \"student_name\": \"test_user\",\n            \"files\": [\n                {\n                    \"id\": 7,\n                    \"file\": \"voluptas.pdf\",\n                    \"post_id\": 9,\n                    \"created_at\": \"2025-06-13T13:09:05.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:05.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 10,\n            \"title\": \"Eveniet vel vel voluptatem molestias et aliquam ut.\",\n            \"description\": \"Et impedit praesentium eligendi vel. Non ratione voluptatibus aut et aperiam. Laborum eligendi voluptates rerum consequatur. Dolorum inventore consequatur dolor et.\",\n            \"visibility\": \"public\",\n            \"student_name\": \"test_user\",\n            \"files\": []\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Voluptas explicabo voluptas sed quisquam qui veritatis.\",\n            \"description\": \"Sed et dignissimos ut temporibus aut debitis ut. Laudantium numquam aliquid tempore nobis vitae. Quos iusto eaque qui repudiandae molestiae.\",\n            \"visibility\": \"private\",\n            \"student_name\": \"test_user\",\n            \"files\": [\n                {\n                    \"id\": 5,\n                    \"file\": \"architecto.pdf\",\n                    \"post_id\": 6,\n                    \"created_at\": \"2025-06-13T13:09:05.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:05.000000Z\"\n                },\n                {\n                    \"id\": 6,\n                    \"file\": \"sunt.pdf\",\n                    \"post_id\": 6,\n                    \"created_at\": \"2025-06-13T13:09:05.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:05.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Rerum fugit placeat omnis ratione maxime adipisci.\",\n            \"description\": \"Nobis consectetur eligendi veniam quisquam sint. Voluptatem voluptatem non et unde hic. Consequatur tempore quia voluptas. Id quisquam qui voluptas fugit.\",\n            \"visibility\": \"public\",\n            \"student_name\": \"test_user\",\n            \"files\": [\n                {\n                    \"id\": 2,\n                    \"file\": \"ut.pdf\",\n                    \"post_id\": 7,\n                    \"created_at\": \"2025-06-13T13:09:04.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:04.000000Z\"\n                },\n                {\n                    \"id\": 8,\n                    \"file\": \"sit.pdf\",\n                    \"post_id\": 7,\n                    \"created_at\": \"2025-06-13T13:09:06.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:06.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Voluptas mollitia quos dolorem et.\",\n            \"description\": \"Voluptatem esse aperiam sit ipsa delectus. Reprehenderit numquam est aliquam sunt perferendis omnis. Omnis eum facilis corporis id.\",\n            \"visibility\": \"private\",\n            \"student_name\": \"test_user\",\n            \"files\": [\n                {\n                    \"id\": 1,\n                    \"file\": \"architecto.pdf\",\n                    \"post_id\": 8,\n                    \"created_at\": \"2025-06-13T13:09:04.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:04.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Quas rem eveniet optio repellat ad.\",\n            \"description\": \"Corporis deleniti et odit. Sed rem est corporis vel autem. Qui est ipsam cum qui asperiores. Autem sequi nulla est consectetur. Pariatur et repellendus magnam doloremque.\",\n            \"visibility\": \"private\",\n            \"student_name\": \"test_user\",\n            \"files\": [\n                {\n                    \"id\": 10,\n                    \"file\": \"deleniti.pdf\",\n                    \"post_id\": 3,\n                    \"created_at\": \"2025-06-13T13:09:06.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:06.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Id qui quasi nam est et harum.\",\n            \"description\": \"Officia ipsam perspiciatis ex fugit qui odio quisquam eum. Ut natus soluta quia necessitatibus sint. Excepturi dicta architecto dolores vero.\",\n            \"visibility\": \"private\",\n            \"student_name\": \"test_user\",\n            \"files\": []\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Vel voluptas distinctio eum sequi placeat saepe voluptate.\",\n            \"description\": \"Minus commodi est aperiam quia est quam. Quas est illo ducimus. Aut numquam officia beatae dolor qui officia et. Voluptates doloribus est nihil aspernatur praesentium.\",\n            \"visibility\": \"public\",\n            \"student_name\": \"test_user\",\n            \"files\": [\n                {\n                    \"id\": 3,\n                    \"file\": \"labore.pdf\",\n                    \"post_id\": 5,\n                    \"created_at\": \"2025-06-13T13:09:04.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:04.000000Z\"\n                },\n                {\n                    \"id\": 4,\n                    \"file\": \"qui.pdf\",\n                    \"post_id\": 5,\n                    \"created_at\": \"2025-06-13T13:09:05.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:05.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"title\": \"In numquam libero quasi laboriosam quis possimus quidem.\",\n            \"description\": \"Et tempore molestias est numquam velit nesciunt est voluptate. Nulla nihil aut velit vitae dicta officia laboriosam. Perferendis tenetur dolor voluptatem praesentium soluta totam quidem.\",\n            \"visibility\": \"private\",\n            \"student_name\": \"test_user\",\n            \"files\": [\n                {\n                    \"id\": 9,\n                    \"file\": \"et.pdf\",\n                    \"post_id\": 1,\n                    \"created_at\": \"2025-06-13T13:09:06.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:06.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Doloribus iure aut dolorum.\",\n            \"description\": \"Eum qui autem culpa est delectus unde laudantium vel. Id reprehenderit autem sunt et iusto. Dolore et cumque beatae rerum et autem ipsam. Ea aliquid consequatur qui repellat.\",\n            \"visibility\": \"public\",\n            \"student_name\": \"test_user\",\n            \"files\": []\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "show_post_by_id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/student/posts/9",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"posts",
+										"9"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/student/posts/9",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"posts",
+												"9"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 15:04:39 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Post retrieved successfully.\",\n    \"data\": {\n        \"id\": 9,\n        \"title\": \"Maxime aspernatur ea soluta quo hic omnis enim.\",\n        \"description\": \"Aut harum fugit sequi temporibus veniam nam voluptas et. A minus aut fugiat.\",\n        \"visibility\": \"private\",\n        \"student_name\": \"test_user\",\n        \"files\": [\n            {\n                \"id\": 7,\n                \"file\": \"voluptas.pdf\",\n                \"post_id\": 9,\n                \"created_at\": \"2025-06-13T13:09:05.000000Z\",\n                \"updated_at\": \"2025-06-13T13:09:05.000000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "add_new_post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Post 1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "new post about anything",
+											"type": "text"
+										},
+										{
+											"key": "visibility",
+											"value": "public",
+											"type": "text"
+										},
+										{
+											"key": "files[0]",
+											"type": "file",
+											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-12 21-21-28.png"
+										},
+										{
+											"key": "files[1]",
+											"type": "file",
+											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-13 11-18-26.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/posts",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"posts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add_new_post",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "Post 1",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "new post about anything",
+													"type": "text"
+												},
+												{
+													"key": "visibility",
+													"value": "public",
+													"type": "text"
+												},
+												{
+													"key": "files[0]",
+													"type": "file",
+													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-12 21-21-28.png"
+												},
+												{
+													"key": "files[1]",
+													"type": "file",
+													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-13 11-18-26.png"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/posts",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"posts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 15:07:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"success\": true,\n        \"status\": 200,\n        \"message\": \"Post created successfully.\",\n        \"data\": {\n            \"title\": \"Post 1\",\n            \"description\": \"new post about anything\",\n            \"visibility\": \"public\",\n            \"student_id\": 31,\n            \"updated_at\": \"2025-06-13T15:07:44.000000Z\",\n            \"created_at\": \"2025-06-13T15:07:44.000000Z\",\n            \"id\": 11,\n            \"files\": [\n                {\n                    \"id\": 11,\n                    \"file\": \"posts/1749827264_Screenshot from 2025-06-12 21-21-28.png\",\n                    \"post_id\": 11,\n                    \"created_at\": \"2025-06-13T15:07:44.000000Z\",\n                    \"updated_at\": \"2025-06-13T15:07:44.000000Z\"\n                },\n                {\n                    \"id\": 12,\n                    \"file\": \"posts/1749827265_Screenshot from 2025-06-13 11-18-26.png\",\n                    \"post_id\": 11,\n                    \"created_at\": \"2025-06-13T15:07:45.000000Z\",\n                    \"updated_at\": \"2025-06-13T15:07:45.000000Z\"\n                }\n            ]\n        }\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "update_post",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Post 11",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "new post about anything",
+											"type": "text"
+										},
+										{
+											"key": "visibility",
+											"value": "public",
+											"type": "text"
+										},
+										{
+											"key": "files[0]",
+											"type": "file",
+											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-12 21-21-28.png"
+										},
+										{
+											"key": "files[1]",
+											"type": "file",
+											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-13 11-18-26.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/posts/11",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"posts",
+										"11"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "Post 11",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "new post about anything",
+													"type": "text"
+												},
+												{
+													"key": "visibility",
+													"value": "public",
+													"type": "text"
+												},
+												{
+													"key": "files[0]",
+													"type": "file",
+													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-12 21-21-28.png"
+												},
+												{
+													"key": "files[1]",
+													"type": "file",
+													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-13 11-18-26.png"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/posts/11",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"posts",
+												"11"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 15:17:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"success\": true,\n        \"status\": 200,\n        \"message\": \"Post updated successfully.\",\n        \"data\": {\n            \"id\": 11,\n            \"title\": \"Post 1\",\n            \"description\": \"new post about anything\",\n            \"visibility\": \"public\",\n            \"course_id\": null,\n            \"student_id\": 31,\n            \"created_at\": \"2025-06-13T15:07:44.000000Z\",\n            \"updated_at\": \"2025-06-13T15:07:44.000000Z\",\n            \"files\": [\n                {\n                    \"id\": 11,\n                    \"file\": \"posts/1749827264_Screenshot from 2025-06-12 21-21-28.png\",\n                    \"post_id\": 11,\n                    \"created_at\": \"2025-06-13T15:07:44.000000Z\",\n                    \"updated_at\": \"2025-06-13T15:07:44.000000Z\"\n                },\n                {\n                    \"id\": 12,\n                    \"file\": \"posts/1749827265_Screenshot from 2025-06-13 11-18-26.png\",\n                    \"post_id\": 11,\n                    \"created_at\": \"2025-06-13T15:07:45.000000Z\",\n                    \"updated_at\": \"2025-06-13T15:07:45.000000Z\"\n                }\n            ]\n        }\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "delete_post",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/student/posts/11",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"posts",
+										"11"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete_post",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/student/posts/11",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"posts",
+												"11"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 15:18:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Post deleted successfully.\"\n}\n"
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "DX1PPg3ACQFNFRzTvv9cAF23uusAxF8xfMwKrokb24b8eccf",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

@@ -28,6 +28,7 @@ class AccountResource extends JsonResource
             'facebook_account' => $this->facebook_account,
             'github_account' => $this->github_account,
             'x_account' => $this->x_account,
+            'skills' => $this->skills,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

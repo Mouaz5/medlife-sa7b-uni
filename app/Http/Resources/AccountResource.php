@@ -29,6 +29,7 @@ class AccountResource extends JsonResource
             'github_account' => $this->github_account,
             'x_account' => $this->x_account,
             'skills' => $this->skills,
+            'academic_year' => $this->academicTimeline[0]->study_year,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

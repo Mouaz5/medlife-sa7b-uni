@@ -78,15 +78,15 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
         Route::get('/', [PostController::class, 'index']);
         Route::get('/{post}', [PostController::class, 'show']);
         Route::post('/', [PostController::class, 'store']);
-        Route::put('/{post}', [PostController::class, 'update']);
+        Route::post('/{post}', [PostController::class, 'update']);
         Route::delete('/{post}', [PostController::class, 'destroy']);
     });
     Route::group(['prefix' => 'complaints'], function () {
         Route::get('/', [ComplaintController::class, 'index']);
         Route::get('/{complaint}', [ComplaintController::class, 'show']);
         Route::post('/send', [ComplaintController::class, 'store']);
-        Route::put('/{post}', [ComplaintController::class, 'update']);
-        Route::delete('/{post}', [ComplaintController::class, 'destroy']);
+        Route::put('/{complaint}', [ComplaintController::class, 'update']);
+        Route::delete('/{complaint}', [ComplaintController::class, 'destroy']);
     });
     // Privacy
     Route::group(['prefix' => 'privacy'], function () {
@@ -99,11 +99,11 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
     Route::group(['prefix' => 'academic-guidance'], function () {
         Route::get('/', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'index']);
         Route::post('/', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'store']);
-        Route::put('/{academicGuidance}', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'update']);
+        Route::post('/{academicGuidance}', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'update']);
         Route::delete('/{academicGuidance}', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'destroy']);
         Route::get('/course/{course}', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'getCourseGuidance']);
-        Route::get('/filter/type', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'filterByType']);
-        Route::get('/filter/date', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'filterByDate']);
+        Route::post('/filter/type', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'filterByType']);
+        Route::post('/filter/date', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'filterByDate']);
         Route::post('/{academicGuidance}/vote', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'vote']);
         Route::get('/{academicGuidance}/vote-stats', [App\Http\Controllers\Student\AcademicGuidanceController::class, 'getVoteStats']);
     });

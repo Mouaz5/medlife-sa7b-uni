@@ -22,8 +22,7 @@ class AddStudentCertificate extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
-            'file' => 'required|file|mimes:pdf|max:5120',
+            'file' => 'required|file',
         ];
     }
 }

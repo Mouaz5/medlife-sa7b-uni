@@ -50,7 +50,7 @@ class CertificatesController extends Controller
 
         $certificate = Certificate::create([
             'student_id' => $student->id,
-            'title' => $request->title
+            'file' => $request->file('file')
         ]);
         if ($request->hasFile('file')) {
             $certificate['file'] = $this->uploadService->uploadFile($request, 'file', 'certificates');

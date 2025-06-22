@@ -114,7 +114,7 @@ class AuthController extends Controller
     public function requestOTPForLogin(RequestOTPForLoginRequest $request)
     {
         $request->validated();
-        $otp = OtpService::generateOtp($request->email, 'login');
+        OtpService::generateOtp($request->email, 'login');
         return response()->json(
             ApiFormatter::success('otp sent, check your email')
         );

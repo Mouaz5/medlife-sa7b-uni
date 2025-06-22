@@ -33,7 +33,10 @@ class ComplaintController extends Controller
         if ($complaint->student_id !== auth()->user()->student->id) {
             return response()->json(ApiFormatter::error('Unauthorized', 'You are not authorized to view this complaint.'), 403);
         }
+        
+        // Load the relationships
         $complaint->load(['type', 'files']);
+        
         return response()->json(
             ApiFormatter::success('Complaint retrieved successfully.', $complaint)
         );
@@ -58,7 +61,11 @@ class ComplaintController extends Controller
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                $filePath = $this->uploadService->uploadFile($request, $image, 'complaint_files');
+                // Create a new request with the current file
+                $fileRequest = new Request();
+                $fileRequest->files->set('image', $image);
+                
+                $filePath = $this->uploadService->uploadFile($fileRequest, 'image', 'complaint_files');
                 if ($filePath) {
                     ComplaintFile::create([
                         'complaint_id' => $complaint->id,
@@ -68,7 +75,7 @@ class ComplaintController extends Controller
             }
         }
 
-        $complaint->load('files');
+        $complaint->load(['files']);
 
         return response()->json([
             ApiFormatter::success('Complaint created successfully.', $complaint)

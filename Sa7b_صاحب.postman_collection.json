@@ -1101,7 +1101,7 @@
 							},
 							"response": [
 								{
-									"name": "New Request",
+									"name": "my_account",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -1145,7 +1145,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 13 Jun 2025 13:32:30 GMT"
+											"value": "Sun, 22 Jun 2025 18:56:12 GMT"
 										},
 										{
 											"key": "Content-Type",
@@ -1157,7 +1157,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Account Retrieved Successfully\",\n    \"data\": {\n        \"id\": 31,\n        \"first_name\": \"Mouaz\",\n        \"middle_name\": null,\n        \"last_name\": \"Abbas\",\n        \"username\": \"Mouaz Abbas\",\n        \"phone_number\": null,\n        \"image\": null,\n        \"college_name\": \"Faculty of Dentistry\",\n        \"linkedIn_account\": null,\n        \"facebook_account\": null,\n        \"github_account\": null,\n        \"x_account\": null,\n        \"created_at\": \"2025-06-13T13:26:11.000000Z\",\n        \"updated_at\": \"2025-06-13T13:26:11.000000Z\"\n    }\n}"
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Account Retrieved Successfully\",\n    \"data\": {\n        \"id\": 31,\n        \"first_name\": \"Mouaz1\",\n        \"middle_name\": \"Mohamed\",\n        \"last_name\": \"Abbas1\",\n        \"username\": \"Mouaz Abbas\",\n        \"bio\": \"Cyber Security Engineer\",\n        \"phone_number\": \"0938249138\",\n        \"image\": \"http://127.0.0.1:8000/storage/students/3SYUwXohNIiG4hEijpEDYSOWxNBwHVXYHshu08D9.png\",\n        \"college_name\": \"Faculty of Dentistry\",\n        \"linkedIn_account\": \"https://mouaz.abbas.linkedin.com\",\n        \"facebook_account\": \"https://mouaz.abbas.facebook.com\",\n        \"github_account\": \"https://mouaz.abbas.github.com\",\n        \"x_account\": \"https://mouaz.abbas.x.com\",\n        \"skills\": [\n            {\n                \"id\": 17,\n                \"skill\": \"flutter developer\",\n                \"student_id\": 31,\n                \"created_at\": \"2025-06-17T10:08:10.000000Z\",\n                \"updated_at\": \"2025-06-17T10:08:10.000000Z\"\n            },\n            {\n                \"id\": 21,\n                \"skill\": \"flutter developer and cyber\",\n                \"student_id\": 31,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 22,\n                \"skill\": \"laravel developer\",\n                \"student_id\": 31,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"academic_year\": {\n            \"id\": 17,\n            \"year\": \"second\",\n            \"college_id\": 4,\n            \"created_at\": \"2025-06-13T13:06:53.000000Z\",\n            \"updated_at\": \"2025-06-13T13:06:53.000000Z\"\n        },\n        \"created_at\": \"2025-06-13T13:26:11.000000Z\",\n        \"updated_at\": \"2025-06-17T10:03:02.000000Z\"\n    }\n}"
 								}
 							]
 						},
@@ -2023,7 +2023,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/api/student/posts/9",
+									"raw": "{{url}}/api/student/posts/30",
 									"host": [
 										"{{url}}"
 									],
@@ -2031,7 +2031,7 @@
 										"api",
 										"student",
 										"posts",
-										"9"
+										"30"
 									]
 								}
 							},
@@ -2250,7 +2250,7 @@
 						{
 							"name": "update_post",
 							"request": {
-								"method": "PUT",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",
@@ -2279,17 +2279,17 @@
 										{
 											"key": "files[0]",
 											"type": "file",
-											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-12 21-21-28.png"
+											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-07 13-00-13.png"
 										},
 										{
 											"key": "files[1]",
 											"type": "file",
-											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-13 11-18-26.png"
+											"src": "/home/mouaz/Pictures/code.png"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/api/student/posts/11",
+									"raw": "{{url}}/api/student/posts/30",
 									"host": [
 										"{{url}}"
 									],
@@ -2297,15 +2297,15 @@
 										"api",
 										"student",
 										"posts",
-										"11"
+										"30"
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "New Request",
+									"name": "update_post",
 									"originalRequest": {
-										"method": "PUT",
+										"method": "POST",
 										"header": [
 											{
 												"key": "Accept",
@@ -2334,17 +2334,17 @@
 												{
 													"key": "files[0]",
 													"type": "file",
-													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-12 21-21-28.png"
+													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-07 13-00-13.png"
 												},
 												{
 													"key": "files[1]",
 													"type": "file",
-													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-13 11-18-26.png"
+													"src": "/home/mouaz/Pictures/code.png"
 												}
 											]
 										},
 										"url": {
-											"raw": "{{url}}/api/student/posts/11",
+											"raw": "{{url}}/api/student/posts/30",
 											"host": [
 												"{{url}}"
 											],
@@ -2352,7 +2352,7 @@
 												"api",
 												"student",
 												"posts",
-												"11"
+												"30"
 											]
 										}
 									},
@@ -2378,7 +2378,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 13 Jun 2025 15:17:29 GMT"
+											"value": "Sun, 22 Jun 2025 18:55:22 GMT"
 										},
 										{
 											"key": "Content-Type",
@@ -2390,7 +2390,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n        \"success\": true,\n        \"status\": 200,\n        \"message\": \"Post updated successfully.\",\n        \"data\": {\n            \"id\": 11,\n            \"title\": \"Post 1\",\n            \"description\": \"new post about anything\",\n            \"visibility\": \"public\",\n            \"course_id\": null,\n            \"student_id\": 31,\n            \"created_at\": \"2025-06-13T15:07:44.000000Z\",\n            \"updated_at\": \"2025-06-13T15:07:44.000000Z\",\n            \"files\": [\n                {\n                    \"id\": 11,\n                    \"file\": \"posts/1749827264_Screenshot from 2025-06-12 21-21-28.png\",\n                    \"post_id\": 11,\n                    \"created_at\": \"2025-06-13T15:07:44.000000Z\",\n                    \"updated_at\": \"2025-06-13T15:07:44.000000Z\"\n                },\n                {\n                    \"id\": 12,\n                    \"file\": \"posts/1749827265_Screenshot from 2025-06-13 11-18-26.png\",\n                    \"post_id\": 11,\n                    \"created_at\": \"2025-06-13T15:07:45.000000Z\",\n                    \"updated_at\": \"2025-06-13T15:07:45.000000Z\"\n                }\n            ]\n        }\n    }\n]"
+									"body": "[\n    {\n        \"success\": true,\n        \"status\": 200,\n        \"message\": \"Post updated successfully.\",\n        \"data\": {\n            \"id\": 30,\n            \"title\": \"Post 11\",\n            \"description\": \"new post about anything\",\n            \"visibility\": \"public\",\n            \"course_id\": null,\n            \"student_id\": 31,\n            \"created_at\": \"2025-06-22T18:55:02.000000Z\",\n            \"updated_at\": \"2025-06-22T18:55:21.000000Z\",\n            \"files\": [\n                {\n                    \"id\": 32,\n                    \"file\": \"posts/1750618521_Screenshot from 2025-06-07 13-00-13.png\",\n                    \"post_id\": 30,\n                    \"created_at\": \"2025-06-22T18:55:21.000000Z\",\n                    \"updated_at\": \"2025-06-22T18:55:21.000000Z\"\n                },\n                {\n                    \"id\": 33,\n                    \"file\": \"posts/1750618521_code.png\",\n                    \"post_id\": 30,\n                    \"created_at\": \"2025-06-22T18:55:21.000000Z\",\n                    \"updated_at\": \"2025-06-22T18:55:21.000000Z\"\n                }\n            ]\n        }\n    }\n]"
 								}
 							]
 						},
@@ -2486,6 +2486,1971 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Post deleted successfully.\"\n}\n"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Certificates",
+					"item": [
+						{
+							"name": "my_certificates",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/certificates",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"certificates"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "my_certificates",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/certificates",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"certificates"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 17:35:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Certificates retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 11,\n            \"file\": \"http://127.0.0.1:8000/storage/certificates/g0bprnAo2Q1bimbO5hrycmadE808Enu33fEghVDa.pdf\",\n            \"student_id\": 31,\n            \"created_at\": \"2025-06-22T17:34:01.000000Z\",\n            \"updated_at\": \"2025-06-22T17:34:01.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "display_student_certificate",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/certificates/2/student",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"certificates",
+										"2",
+										"student"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "display_student_certificates",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/certificates/2/student",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"certificates",
+												"2",
+												"student"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 17:37:46 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Certificates retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 6,\n            \"file\": \"perspiciatis.pdf\",\n            \"student_id\": 2,\n            \"created_at\": \"2025-06-13T13:09:50.000000Z\",\n            \"updated_at\": \"2025-06-13T13:09:50.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"file\": \"quisquam.pdf\",\n            \"student_id\": 2,\n            \"created_at\": \"2025-06-13T13:09:50.000000Z\",\n            \"updated_at\": \"2025-06-13T13:09:50.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "add_certificate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/home/mouaz/Books/The_Mountain_Is_You.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/certificates",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"certificates"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add_certificate",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/home/mouaz/Books/The_Mountain_Is_You.pdf"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/certificates",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"certificates"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 17:34:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Certificate added successfully.\",\n    \"data\": {\n        \"student_id\": 31,\n        \"file\": \"http://127.0.0.1:8000/storage/certificates/g0bprnAo2Q1bimbO5hrycmadE808Enu33fEghVDa.pdf\",\n        \"updated_at\": \"2025-06-22T17:34:01.000000Z\",\n        \"created_at\": \"2025-06-22T17:34:01.000000Z\",\n        \"id\": 11\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete_certificate",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/certificates/11",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"certificates",
+										"11"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/certificates/11",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"certificates",
+												"11"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 17:38:30 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Certificate deleted successfully.\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Followers",
+					"item": [
+						{
+							"name": "get_my_following",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/followers/following",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"followers",
+										"following"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get_my_following",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/followers/following",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"followers",
+												"following"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 17:52:04 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Following retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"first_name\": \"Ramiro\",\n            \"middle_name\": \"Kessler\",\n            \"last_name\": \"Zboncak\",\n            \"bio\": null,\n            \"phone_number\": \"210-599-2524\",\n            \"image\": \"https://via.placeholder.com/640x480.png/00aaff?text=people+nulla\",\n            \"linkedIn_account\": null,\n            \"facebook_account\": null,\n            \"github_account\": null,\n            \"x_account\": null,\n            \"user_id\": 1,\n            \"college_id\": 26,\n            \"created_at\": \"2025-06-13T13:08:12.000000Z\",\n            \"updated_at\": \"2025-06-13T13:08:12.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "follow_student",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/student/followers/2/follow",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"followers",
+										"2",
+										"follow"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "follow_student",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/student/followers/2/follow",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"followers",
+												"2",
+												"follow"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 17:51:09 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Student Followed Successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "unfollow_student",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/student/followers/2/unfollow",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"followers",
+										"2",
+										"unfollow"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "unfollow_student",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/student/followers/2/unfollow",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"followers",
+												"2",
+												"unfollow"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 17:53:12 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Student Unfollowed Successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Complaint",
+					"item": [
+						{
+							"name": "all_complaints",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "down",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/complaints",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"complaints"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "type",
+													"value": "down",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/complaints",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"complaints"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:36:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"success\": true,\n        \"status\": 200,\n        \"message\": \"Complaints retrieved successfully.\",\n        \"data\": [\n            {\n                \"id\": 14,\n                \"title\": \"complaint 1\",\n                \"description\": \"this complaint 1\",\n                \"type_id\": 2,\n                \"student_id\": 31,\n                \"created_at\": \"2025-06-22T18:35:37.000000Z\",\n                \"updated_at\": \"2025-06-22T18:35:37.000000Z\",\n                \"type\": {\n                    \"id\": 2,\n                    \"type\": \"ex\",\n                    \"created_at\": \"2025-06-13T13:09:07.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:07.000000Z\"\n                },\n                \"files\": [\n                    {\n                        \"id\": 11,\n                        \"image\": \"http://127.0.0.1:8000/storage/complaint_files/ltdvZMigf9kxZisqpgqaG7cIRy49LpfDu8aumLt3.png\",\n                        \"complaint_id\": 14,\n                        \"created_at\": \"2025-06-22T18:35:37.000000Z\",\n                        \"updated_at\": \"2025-06-22T18:35:37.000000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 13,\n                \"title\": \"complaint 1\",\n                \"description\": \"this complaint 1\",\n                \"type_id\": 2,\n                \"student_id\": 31,\n                \"created_at\": \"2025-06-22T18:28:23.000000Z\",\n                \"updated_at\": \"2025-06-22T18:28:23.000000Z\",\n                \"type\": {\n                    \"id\": 2,\n                    \"type\": \"ex\",\n                    \"created_at\": \"2025-06-13T13:09:07.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:07.000000Z\"\n                },\n                \"files\": []\n            },\n            {\n                \"id\": 12,\n                \"title\": \"complaint 1\",\n                \"description\": \"this complaint 1\",\n                \"type_id\": 2,\n                \"student_id\": 31,\n                \"created_at\": \"2025-06-22T18:28:10.000000Z\",\n                \"updated_at\": \"2025-06-22T18:28:10.000000Z\",\n                \"type\": {\n                    \"id\": 2,\n                    \"type\": \"ex\",\n                    \"created_at\": \"2025-06-13T13:09:07.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:07.000000Z\"\n                },\n                \"files\": []\n            },\n            {\n                \"id\": 11,\n                \"title\": \"complaint 1\",\n                \"description\": \"this complaint 1\",\n                \"type_id\": 2,\n                \"student_id\": 31,\n                \"created_at\": \"2025-06-22T18:23:15.000000Z\",\n                \"updated_at\": \"2025-06-22T18:23:15.000000Z\",\n                \"type\": {\n                    \"id\": 2,\n                    \"type\": \"ex\",\n                    \"created_at\": \"2025-06-13T13:09:07.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:09:07.000000Z\"\n                },\n                \"files\": []\n            }\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "display complaint detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/student/complaints/14",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"complaints",
+										"14"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/student/complaints/14",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"complaints",
+												"14"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:36:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Complaint retrieved successfully.\",\n    \"data\": {\n        \"id\": 14,\n        \"title\": \"complaint 1\",\n        \"description\": \"this complaint 1\",\n        \"type_id\": 2,\n        \"student_id\": 31,\n        \"created_at\": \"2025-06-22T18:35:37.000000Z\",\n        \"updated_at\": \"2025-06-22T18:35:37.000000Z\",\n        \"type\": {\n            \"id\": 2,\n            \"type\": \"ex\",\n            \"created_at\": \"2025-06-13T13:09:07.000000Z\",\n            \"updated_at\": \"2025-06-13T13:09:07.000000Z\"\n        },\n        \"files\": [\n            {\n                \"id\": 11,\n                \"image\": \"http://127.0.0.1:8000/storage/complaint_files/ltdvZMigf9kxZisqpgqaG7cIRy49LpfDu8aumLt3.png\",\n                \"complaint_id\": 14,\n                \"created_at\": \"2025-06-22T18:35:37.000000Z\",\n                \"updated_at\": \"2025-06-22T18:35:37.000000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "add_complaint",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "complaint 1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "this complaint 1",
+											"type": "text"
+										},
+										{
+											"key": "type_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "images[0]",
+											"type": "file",
+											"src": "/home/mouaz/Pictures/Screenshot from 2025-06-07 13-00-13.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/complaints/send",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"complaints",
+										"send"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "complaint 1",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "this complaint 1",
+													"type": "text"
+												},
+												{
+													"key": "type_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "images[0]",
+													"type": "file",
+													"src": "/home/mouaz/Pictures/Screenshot from 2025-06-07 13-00-13.png"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/complaints/send",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"complaints",
+												"send"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:35:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"success\": true,\n        \"status\": 200,\n        \"message\": \"Complaint created successfully.\",\n        \"data\": {\n            \"title\": \"complaint 1\",\n            \"description\": \"this complaint 1\",\n            \"type_id\": \"2\",\n            \"student_id\": 31,\n            \"updated_at\": \"2025-06-22T18:35:37.000000Z\",\n            \"created_at\": \"2025-06-22T18:35:37.000000Z\",\n            \"id\": 14,\n            \"files\": [\n                {\n                    \"id\": 11,\n                    \"image\": \"http://127.0.0.1:8000/storage/complaint_files/ltdvZMigf9kxZisqpgqaG7cIRy49LpfDu8aumLt3.png\",\n                    \"complaint_id\": 14,\n                    \"created_at\": \"2025-06-22T18:35:37.000000Z\",\n                    \"updated_at\": \"2025-06-22T18:35:37.000000Z\"\n                }\n            ]\n        }\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "update_complaint",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "complaint11",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "this is complaint 11",
+											"type": "text"
+										},
+										{
+											"key": "type_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/complaints/14",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"complaints",
+										"14"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "complaint11",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "this is complaint 11",
+													"type": "text"
+												},
+												{
+													"key": "type_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/complaints/14",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"complaints",
+												"14"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:40:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Complaint updated successfully.\",\n    \"data\": {\n        \"id\": 14,\n        \"title\": \"complaint 1\",\n        \"description\": \"this complaint 1\",\n        \"type_id\": 2,\n        \"student_id\": 31,\n        \"created_at\": \"2025-06-22T18:35:37.000000Z\",\n        \"updated_at\": \"2025-06-22T18:35:37.000000Z\",\n        \"type\": {\n            \"id\": 2,\n            \"type\": \"ex\",\n            \"created_at\": \"2025-06-13T13:09:07.000000Z\",\n            \"updated_at\": \"2025-06-13T13:09:07.000000Z\"\n        },\n        \"files\": [\n            {\n                \"id\": 11,\n                \"image\": \"http://127.0.0.1:8000/storage/complaint_files/ltdvZMigf9kxZisqpgqaG7cIRy49LpfDu8aumLt3.png\",\n                \"complaint_id\": 14,\n                \"created_at\": \"2025-06-22T18:35:37.000000Z\",\n                \"updated_at\": \"2025-06-22T18:35:37.000000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete_complaint",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/complaints/13",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"complaints",
+										"13"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/complaints/13",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"complaints",
+												"13"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:41:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Complaint deleted successfully.\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Academic Guidence",
+					"item": [
+						{
+							"name": "my_academic_gudince",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/academic-guidance",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"academic-guidance"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "my_academic_guidance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/student/academic-guidance",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"academic-guidance"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:03:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 12,\n            \"student_id\": 31,\n            \"course_id\": 2,\n            \"content\": \"academic 1\",\n            \"type\": \"up\",\n            \"vote_count\": 0,\n            \"created_at\": \"2025-06-22T18:02:28.000000Z\",\n            \"updated_at\": \"2025-06-22T18:02:28.000000Z\",\n            \"course\": {\n                \"id\": 2,\n                \"name\": \"Iste reprehenderit ea dignissimos possimus.\",\n                \"college_id\": 22,\n                \"semester_id\": 1,\n                \"created_at\": \"2025-06-13T13:07:16.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:16.000000Z\"\n            },\n            \"votes\": []\n        },\n        {\n            \"id\": 11,\n            \"student_id\": 31,\n            \"course_id\": 2,\n            \"content\": \"academic 1\",\n            \"type\": \"up\",\n            \"vote_count\": 0,\n            \"created_at\": \"2025-06-22T18:01:51.000000Z\",\n            \"updated_at\": \"2025-06-22T18:01:51.000000Z\",\n            \"course\": {\n                \"id\": 2,\n                \"name\": \"Iste reprehenderit ea dignissimos possimus.\",\n                \"college_id\": 22,\n                \"semester_id\": 1,\n                \"created_at\": \"2025-06-13T13:07:16.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:16.000000Z\"\n            },\n            \"votes\": []\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "add_academic_guidance",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "course_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "academic 1 ",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "up",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/academic-guidance",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"academic-guidance"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add_academic_guidance",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "course_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "content",
+													"value": "academic 1 ",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "up",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/academic-guidance",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"academic-guidance"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:02:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Academic guidance created successfully\",\n    \"data\": {\n        \"student_id\": 31,\n        \"course_id\": \"2\",\n        \"content\": \"academic 1\",\n        \"type\": \"up\",\n        \"vote_count\": 0,\n        \"updated_at\": \"2025-06-22T18:02:28.000000Z\",\n        \"created_at\": \"2025-06-22T18:02:28.000000Z\",\n        \"id\": 12\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update_academic_guidance",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "academic guidance 11",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "down",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/academic-guidance/12",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"academic-guidance",
+										"12"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update_academic_guidance",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "content",
+													"value": "academic guidance 11",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "down",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/academic-guidance/12",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"academic-guidance",
+												"12"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:05:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Academic guidance updated successfully\",\n    \"data\": {\n        \"id\": 12,\n        \"student_id\": 31,\n        \"course_id\": 2,\n        \"content\": \"academic guidance 11\",\n        \"type\": \"down\",\n        \"vote_count\": 0,\n        \"created_at\": \"2025-06-22T18:02:28.000000Z\",\n        \"updated_at\": \"2025-06-22T18:05:55.000000Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete_academic_guidance",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/student/academic-guidance/12",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"academic-guidance",
+										"12"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete_academic_guidance",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/student/academic-guidance/12",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"academic-guidance",
+												"12"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:08:24 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Academic guidance deleted successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get_course_guidance",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/student/academic-guidance/course/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"academic-guidance",
+										"course",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get_course_guidance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/student/academic-guidance/course/2",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"academic-guidance",
+												"course",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:09:15 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 11,\n            \"student_id\": 31,\n            \"course_id\": 2,\n            \"content\": \"academic 1\",\n            \"type\": \"up\",\n            \"vote_count\": 0,\n            \"created_at\": \"2025-06-22T18:01:51.000000Z\",\n            \"updated_at\": \"2025-06-22T18:01:51.000000Z\",\n            \"student\": {\n                \"id\": 31,\n                \"first_name\": \"Mouaz1\",\n                \"middle_name\": \"Mohamed\",\n                \"last_name\": \"Abbas1\",\n                \"bio\": \"Cyber Security Engineer\",\n                \"phone_number\": \"0938249138\",\n                \"image\": \"http://127.0.0.1:8000/storage/students/3SYUwXohNIiG4hEijpEDYSOWxNBwHVXYHshu08D9.png\",\n                \"linkedIn_account\": \"https://mouaz.abbas.linkedin.com\",\n                \"facebook_account\": \"https://mouaz.abbas.facebook.com\",\n                \"github_account\": \"https://mouaz.abbas.github.com\",\n                \"x_account\": \"https://mouaz.abbas.x.com\",\n                \"user_id\": 2,\n                \"college_id\": 2,\n                \"created_at\": \"2025-06-13T13:26:11.000000Z\",\n                \"updated_at\": \"2025-06-17T10:03:02.000000Z\"\n            },\n            \"votes\": []\n        },\n        {\n            \"id\": 7,\n            \"student_id\": 8,\n            \"course_id\": 2,\n            \"content\": \"Consectetur aspernatur voluptatibus enim molestiae itaque fugit voluptatibus. Autem consequatur quam molestiae. Animi cum reprehenderit saepe praesentium qui reprehenderit. Exercitationem saepe nulla nemo.\",\n            \"type\": \"down\",\n            \"vote_count\": 42,\n            \"created_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"student\": {\n                \"id\": 8,\n                \"first_name\": \"Elliott\",\n                \"middle_name\": \"Daniel\",\n                \"last_name\": \"Wunsch\",\n                \"bio\": null,\n                \"phone_number\": \"(248) 940-5063\",\n                \"image\": \"https://via.placeholder.com/640x480.png/002266?text=people+harum\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 30,\n                \"created_at\": \"2025-06-13T13:08:14.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:14.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 2,\n                    \"student_id\": 30,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:53.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:53.000000Z\"\n                },\n                {\n                    \"id\": 4,\n                    \"student_id\": 1,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:53.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:53.000000Z\"\n                },\n                {\n                    \"id\": 10,\n                    \"student_id\": 9,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"student_id\": 10,\n            \"course_id\": 2,\n            \"content\": \"Sit ratione suscipit vel assumenda. Voluptatibus et earum sed veniam necessitatibus. Ut maxime molestiae est occaecati eos.\",\n            \"type\": \"up\",\n            \"vote_count\": 74,\n            \"created_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"student\": {\n                \"id\": 10,\n                \"first_name\": \"Bettye\",\n                \"middle_name\": \"West\",\n                \"last_name\": \"O'Hara\",\n                \"bio\": null,\n                \"phone_number\": \"669.797.1757\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00ff44?text=people+qui\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 9,\n                \"created_at\": \"2025-06-13T13:08:15.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:15.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 5,\n                    \"student_id\": 4,\n                    \"academic_guidance_id\": 2,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:54.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:54.000000Z\"\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "filter_by_type",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "down",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/academic-guidance/filter/type",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"academic-guidance",
+										"filter",
+										"type"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "filter_type",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "type",
+													"value": "down",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/academic-guidance/filter/type",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"academic-guidance",
+												"filter",
+												"type"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:11:36 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"student_id\": 8,\n            \"course_id\": 2,\n            \"content\": \"Consectetur aspernatur voluptatibus enim molestiae itaque fugit voluptatibus. Autem consequatur quam molestiae. Animi cum reprehenderit saepe praesentium qui reprehenderit. Exercitationem saepe nulla nemo.\",\n            \"type\": \"down\",\n            \"vote_count\": 42,\n            \"created_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"student\": {\n                \"id\": 8,\n                \"first_name\": \"Elliott\",\n                \"middle_name\": \"Daniel\",\n                \"last_name\": \"Wunsch\",\n                \"bio\": null,\n                \"phone_number\": \"(248) 940-5063\",\n                \"image\": \"https://via.placeholder.com/640x480.png/002266?text=people+harum\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 30,\n                \"created_at\": \"2025-06-13T13:08:14.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:14.000000Z\"\n            },\n            \"course\": {\n                \"id\": 2,\n                \"name\": \"Iste reprehenderit ea dignissimos possimus.\",\n                \"college_id\": 22,\n                \"semester_id\": 1,\n                \"created_at\": \"2025-06-13T13:07:16.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:16.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 2,\n                    \"student_id\": 30,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:53.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:53.000000Z\"\n                },\n                {\n                    \"id\": 4,\n                    \"student_id\": 1,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:53.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:53.000000Z\"\n                },\n                {\n                    \"id\": 10,\n                    \"student_id\": 9,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"student_id\": 1,\n            \"course_id\": 5,\n            \"content\": \"Nihil non dolor porro et distinctio voluptas necessitatibus. Et repudiandae porro iusto aut explicabo et id. Quaerat voluptas ratione perspiciatis dolore officia nulla voluptatem. Consequatur quam dignissimos alias animi saepe.\",\n            \"type\": \"down\",\n            \"vote_count\": 19,\n            \"created_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"student\": {\n                \"id\": 1,\n                \"first_name\": \"Craig\",\n                \"middle_name\": \"Steuber\",\n                \"last_name\": \"Sauer\",\n                \"bio\": null,\n                \"phone_number\": \"1-719-345-3626\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00bbaa?text=people+voluptates\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 32,\n                \"created_at\": \"2025-06-13T13:08:12.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:12.000000Z\"\n            },\n            \"course\": {\n                \"id\": 5,\n                \"name\": \"Magni iste rerum earum suscipit.\",\n                \"college_id\": 15,\n                \"semester_id\": 2,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 6,\n                    \"student_id\": 19,\n                    \"academic_guidance_id\": 8,\n                    \"type\": \"up\",\n                    \"created_at\": \"2025-06-13T13:11:54.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:54.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 9,\n            \"student_id\": 6,\n            \"course_id\": 7,\n            \"content\": \"Unde esse nisi qui deserunt dolores quia. Doloremque placeat vel provident quo blanditiis alias. Doloribus tempora corrupti neque ab ut ea.\",\n            \"type\": \"down\",\n            \"vote_count\": 63,\n            \"created_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"student\": {\n                \"id\": 6,\n                \"first_name\": \"Ursula\",\n                \"middle_name\": \"Keeling\",\n                \"last_name\": \"Gusikowski\",\n                \"bio\": null,\n                \"phone_number\": \"630.656.9458\",\n                \"image\": \"https://via.placeholder.com/640x480.png/0066dd?text=people+veritatis\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 18,\n                \"created_at\": \"2025-06-13T13:08:14.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:14.000000Z\"\n            },\n            \"course\": {\n                \"id\": 7,\n                \"name\": \"Corrupti quod quia expedita delectus.\",\n                \"college_id\": 14,\n                \"semester_id\": 7,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 8,\n                    \"student_id\": 26,\n                    \"academic_guidance_id\": 9,\n                    \"type\": \"up\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"student_id\": 19,\n            \"course_id\": 5,\n            \"content\": \"Ut commodi quis sunt totam suscipit officiis itaque maiores. Aut facere commodi vitae deleniti officiis. Non animi necessitatibus soluta praesentium aliquid. Sint tempora dicta itaque mollitia qui.\",\n            \"type\": \"down\",\n            \"vote_count\": 2,\n            \"created_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"student\": {\n                \"id\": 19,\n                \"first_name\": \"Nedra\",\n                \"middle_name\": \"Orn\",\n                \"last_name\": \"D'Amore\",\n                \"bio\": null,\n                \"phone_number\": \"+17735895414\",\n                \"image\": \"https://via.placeholder.com/640x480.png/008822?text=people+quisquam\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 12,\n                \"created_at\": \"2025-06-13T13:10:02.000000Z\",\n                \"updated_at\": \"2025-06-13T13:10:02.000000Z\"\n            },\n            \"course\": {\n                \"id\": 5,\n                \"name\": \"Magni iste rerum earum suscipit.\",\n                \"college_id\": 15,\n                \"semester_id\": 2,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 7,\n                    \"student_id\": 24,\n                    \"academic_guidance_id\": 1,\n                    \"type\": \"up\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                },\n                {\n                    \"id\": 9,\n                    \"student_id\": 10,\n                    \"academic_guidance_id\": 1,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "filter_date",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "start_date",
+											"value": "11-06-2025",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "20-06-2025",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/academic-guidance/filter/date",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"academic-guidance",
+										"filter",
+										"date"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "start_date",
+													"value": "11-06-2025",
+													"type": "text"
+												},
+												{
+													"key": "end_date",
+													"value": "20-06-2025",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/academic-guidance/filter/date",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"academic-guidance",
+												"filter",
+												"date"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:14:12 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"student_id\": 8,\n            \"course_id\": 2,\n            \"content\": \"Consectetur aspernatur voluptatibus enim molestiae itaque fugit voluptatibus. Autem consequatur quam molestiae. Animi cum reprehenderit saepe praesentium qui reprehenderit. Exercitationem saepe nulla nemo.\",\n            \"type\": \"down\",\n            \"vote_count\": 42,\n            \"created_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"student\": {\n                \"id\": 8,\n                \"first_name\": \"Elliott\",\n                \"middle_name\": \"Daniel\",\n                \"last_name\": \"Wunsch\",\n                \"bio\": null,\n                \"phone_number\": \"(248) 940-5063\",\n                \"image\": \"https://via.placeholder.com/640x480.png/002266?text=people+harum\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 30,\n                \"created_at\": \"2025-06-13T13:08:14.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:14.000000Z\"\n            },\n            \"course\": {\n                \"id\": 2,\n                \"name\": \"Iste reprehenderit ea dignissimos possimus.\",\n                \"college_id\": 22,\n                \"semester_id\": 1,\n                \"created_at\": \"2025-06-13T13:07:16.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:16.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 2,\n                    \"student_id\": 30,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:53.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:53.000000Z\"\n                },\n                {\n                    \"id\": 4,\n                    \"student_id\": 1,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:53.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:53.000000Z\"\n                },\n                {\n                    \"id\": 10,\n                    \"student_id\": 9,\n                    \"academic_guidance_id\": 7,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"student_id\": 1,\n            \"course_id\": 5,\n            \"content\": \"Nihil non dolor porro et distinctio voluptas necessitatibus. Et repudiandae porro iusto aut explicabo et id. Quaerat voluptas ratione perspiciatis dolore officia nulla voluptatem. Consequatur quam dignissimos alias animi saepe.\",\n            \"type\": \"down\",\n            \"vote_count\": 19,\n            \"created_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"student\": {\n                \"id\": 1,\n                \"first_name\": \"Craig\",\n                \"middle_name\": \"Steuber\",\n                \"last_name\": \"Sauer\",\n                \"bio\": null,\n                \"phone_number\": \"1-719-345-3626\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00bbaa?text=people+voluptates\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 32,\n                \"created_at\": \"2025-06-13T13:08:12.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:12.000000Z\"\n            },\n            \"course\": {\n                \"id\": 5,\n                \"name\": \"Magni iste rerum earum suscipit.\",\n                \"college_id\": 15,\n                \"semester_id\": 2,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 6,\n                    \"student_id\": 19,\n                    \"academic_guidance_id\": 8,\n                    \"type\": \"up\",\n                    \"created_at\": \"2025-06-13T13:11:54.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:54.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 9,\n            \"student_id\": 6,\n            \"course_id\": 7,\n            \"content\": \"Unde esse nisi qui deserunt dolores quia. Doloremque placeat vel provident quo blanditiis alias. Doloribus tempora corrupti neque ab ut ea.\",\n            \"type\": \"down\",\n            \"vote_count\": 63,\n            \"created_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"student\": {\n                \"id\": 6,\n                \"first_name\": \"Ursula\",\n                \"middle_name\": \"Keeling\",\n                \"last_name\": \"Gusikowski\",\n                \"bio\": null,\n                \"phone_number\": \"630.656.9458\",\n                \"image\": \"https://via.placeholder.com/640x480.png/0066dd?text=people+veritatis\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 18,\n                \"created_at\": \"2025-06-13T13:08:14.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:14.000000Z\"\n            },\n            \"course\": {\n                \"id\": 7,\n                \"name\": \"Corrupti quod quia expedita delectus.\",\n                \"college_id\": 14,\n                \"semester_id\": 7,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 8,\n                    \"student_id\": 26,\n                    \"academic_guidance_id\": 9,\n                    \"type\": \"up\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 10,\n            \"student_id\": 28,\n            \"course_id\": 10,\n            \"content\": \"Quos recusandae neque quia qui cupiditate. Quisquam nisi delectus ad. Ipsam quam minima et laborum atque quia dignissimos numquam. Iusto quam rerum sit. Expedita laudantium ipsum eius quas.\",\n            \"type\": \"up\",\n            \"vote_count\": 8,\n            \"created_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:46.000000Z\",\n            \"student\": {\n                \"id\": 28,\n                \"first_name\": \"Lon\",\n                \"middle_name\": \"Dare\",\n                \"last_name\": \"Jacobs\",\n                \"bio\": null,\n                \"phone_number\": \"520.530.1812\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00dd44?text=people+ex\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 30,\n                \"created_at\": \"2025-06-13T13:10:10.000000Z\",\n                \"updated_at\": \"2025-06-13T13:10:10.000000Z\"\n            },\n            \"course\": {\n                \"id\": 10,\n                \"name\": \"Aspernatur sed provident qui esse qui ut ratione.\",\n                \"college_id\": 14,\n                \"semester_id\": 6,\n                \"created_at\": \"2025-06-13T13:07:19.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:19.000000Z\"\n            },\n            \"votes\": []\n        },\n        {\n            \"id\": 4,\n            \"student_id\": 3,\n            \"course_id\": 5,\n            \"content\": \"Nulla molestiae sint minus qui quibusdam. Voluptas ex et ipsa distinctio.\",\n            \"type\": \"up\",\n            \"vote_count\": 35,\n            \"created_at\": \"2025-06-13T13:11:45.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:45.000000Z\",\n            \"student\": {\n                \"id\": 3,\n                \"first_name\": \"Louvenia\",\n                \"middle_name\": \"Kassulke\",\n                \"last_name\": \"Hermiston\",\n                \"bio\": null,\n                \"phone_number\": \"760.550.2170\",\n                \"image\": \"https://via.placeholder.com/640x480.png/0022ff?text=people+quae\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 34,\n                \"created_at\": \"2025-06-13T13:08:12.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:12.000000Z\"\n            },\n            \"course\": {\n                \"id\": 5,\n                \"name\": \"Magni iste rerum earum suscipit.\",\n                \"college_id\": 15,\n                \"semester_id\": 2,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 1,\n                    \"student_id\": 17,\n                    \"academic_guidance_id\": 4,\n                    \"type\": \"up\",\n                    \"created_at\": \"2025-06-13T13:11:53.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:53.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"student_id\": 16,\n            \"course_id\": 6,\n            \"content\": \"Sint earum dolorum exercitationem et dolorum tempore. Sint tenetur tenetur ea deserunt. Ducimus mollitia natus magni iusto libero cupiditate quam. Laboriosam perferendis voluptatem quasi voluptatem deserunt.\",\n            \"type\": \"up\",\n            \"vote_count\": 18,\n            \"created_at\": \"2025-06-13T13:11:45.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:45.000000Z\",\n            \"student\": {\n                \"id\": 16,\n                \"first_name\": \"Roy\",\n                \"middle_name\": \"Dickens\",\n                \"last_name\": \"Wisoky\",\n                \"bio\": null,\n                \"phone_number\": \"1-260-989-5512\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00aa99?text=people+saepe\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 31,\n                \"created_at\": \"2025-06-13T13:09:58.000000Z\",\n                \"updated_at\": \"2025-06-13T13:09:58.000000Z\"\n            },\n            \"course\": {\n                \"id\": 6,\n                \"name\": \"Fuga provident et aperiam vitae.\",\n                \"college_id\": 11,\n                \"semester_id\": 8,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": []\n        },\n        {\n            \"id\": 6,\n            \"student_id\": 16,\n            \"course_id\": 7,\n            \"content\": \"Aspernatur reiciendis cum laboriosam. Veritatis odit voluptates sunt. Officiis possimus ducimus totam dolorum beatae. Omnis impedit et est laborum mollitia in.\",\n            \"type\": \"up\",\n            \"vote_count\": 83,\n            \"created_at\": \"2025-06-13T13:11:45.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:45.000000Z\",\n            \"student\": {\n                \"id\": 16,\n                \"first_name\": \"Roy\",\n                \"middle_name\": \"Dickens\",\n                \"last_name\": \"Wisoky\",\n                \"bio\": null,\n                \"phone_number\": \"1-260-989-5512\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00aa99?text=people+saepe\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 31,\n                \"created_at\": \"2025-06-13T13:09:58.000000Z\",\n                \"updated_at\": \"2025-06-13T13:09:58.000000Z\"\n            },\n            \"course\": {\n                \"id\": 7,\n                \"name\": \"Corrupti quod quia expedita delectus.\",\n                \"college_id\": 14,\n                \"semester_id\": 7,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 3,\n                    \"student_id\": 5,\n                    \"academic_guidance_id\": 6,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:53.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:53.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"student_id\": 19,\n            \"course_id\": 5,\n            \"content\": \"Ut commodi quis sunt totam suscipit officiis itaque maiores. Aut facere commodi vitae deleniti officiis. Non animi necessitatibus soluta praesentium aliquid. Sint tempora dicta itaque mollitia qui.\",\n            \"type\": \"down\",\n            \"vote_count\": 2,\n            \"created_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"student\": {\n                \"id\": 19,\n                \"first_name\": \"Nedra\",\n                \"middle_name\": \"Orn\",\n                \"last_name\": \"D'Amore\",\n                \"bio\": null,\n                \"phone_number\": \"+17735895414\",\n                \"image\": \"https://via.placeholder.com/640x480.png/008822?text=people+quisquam\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 12,\n                \"created_at\": \"2025-06-13T13:10:02.000000Z\",\n                \"updated_at\": \"2025-06-13T13:10:02.000000Z\"\n            },\n            \"course\": {\n                \"id\": 5,\n                \"name\": \"Magni iste rerum earum suscipit.\",\n                \"college_id\": 15,\n                \"semester_id\": 2,\n                \"created_at\": \"2025-06-13T13:07:18.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:18.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 7,\n                    \"student_id\": 24,\n                    \"academic_guidance_id\": 1,\n                    \"type\": \"up\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                },\n                {\n                    \"id\": 9,\n                    \"student_id\": 10,\n                    \"academic_guidance_id\": 1,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:55.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:55.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"student_id\": 10,\n            \"course_id\": 2,\n            \"content\": \"Sit ratione suscipit vel assumenda. Voluptatibus et earum sed veniam necessitatibus. Ut maxime molestiae est occaecati eos.\",\n            \"type\": \"up\",\n            \"vote_count\": 74,\n            \"created_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"student\": {\n                \"id\": 10,\n                \"first_name\": \"Bettye\",\n                \"middle_name\": \"West\",\n                \"last_name\": \"O'Hara\",\n                \"bio\": null,\n                \"phone_number\": \"669.797.1757\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00ff44?text=people+qui\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 9,\n                \"created_at\": \"2025-06-13T13:08:15.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:15.000000Z\"\n            },\n            \"course\": {\n                \"id\": 2,\n                \"name\": \"Iste reprehenderit ea dignissimos possimus.\",\n                \"college_id\": 22,\n                \"semester_id\": 1,\n                \"created_at\": \"2025-06-13T13:07:16.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:16.000000Z\"\n            },\n            \"votes\": [\n                {\n                    \"id\": 5,\n                    \"student_id\": 4,\n                    \"academic_guidance_id\": 2,\n                    \"type\": \"down\",\n                    \"created_at\": \"2025-06-13T13:11:54.000000Z\",\n                    \"updated_at\": \"2025-06-13T13:11:54.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"student_id\": 7,\n            \"course_id\": 10,\n            \"content\": \"Dolorem asperiores aut quisquam autem nisi similique maxime. Quibusdam quasi aut autem numquam dolor qui. Et velit quibusdam repellat ut.\",\n            \"type\": \"up\",\n            \"vote_count\": 55,\n            \"created_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"updated_at\": \"2025-06-13T13:11:44.000000Z\",\n            \"student\": {\n                \"id\": 7,\n                \"first_name\": \"Maureen\",\n                \"middle_name\": \"Senger\",\n                \"last_name\": \"Kutch\",\n                \"bio\": null,\n                \"phone_number\": \"910-516-7465\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00dd22?text=people+nemo\",\n                \"linkedIn_account\": null,\n                \"facebook_account\": null,\n                \"github_account\": null,\n                \"x_account\": null,\n                \"user_id\": 1,\n                \"college_id\": 32,\n                \"created_at\": \"2025-06-13T13:08:14.000000Z\",\n                \"updated_at\": \"2025-06-13T13:08:14.000000Z\"\n            },\n            \"course\": {\n                \"id\": 10,\n                \"name\": \"Aspernatur sed provident qui esse qui ut ratione.\",\n                \"college_id\": 14,\n                \"semester_id\": 6,\n                \"created_at\": \"2025-06-13T13:07:19.000000Z\",\n                \"updated_at\": \"2025-06-13T13:07:19.000000Z\"\n            },\n            \"votes\": []\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "add_vote_to_academic_guidance",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "down",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/academic-guidance/11/vote",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"academic-guidance",
+										"11",
+										"vote"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add_vote",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "type",
+													"value": "down",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student/academic-guidance/11/vote",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student",
+												"academic-guidance",
+												"11",
+												"vote"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Jun 2025 18:16:05 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Vote added successfully\"\n}"
 								}
 							]
 						}

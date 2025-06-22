@@ -150,7 +150,7 @@ class AcademicGuidanceController extends Controller
 
         $startDate = Carbon::parse($request->start_date)->startOfDay();
         $endDate = Carbon::parse($request->end_date)->endOfDay();
-
+        
         $guidanceEntries = AcademicGuidance::with(['student', 'course', 'votes'])
             ->whereBetween('created_at', [$startDate, $endDate])
             ->orderBy('created_at', 'desc')

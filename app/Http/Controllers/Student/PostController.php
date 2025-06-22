@@ -30,7 +30,7 @@ class PostController extends Controller
             'title' => 'required|string|min:5',
             'description' => 'required|string|min:10',
             'visibility' => 'required|in:public,private',
-            'files' => 'required|array|nullable'
+            'files' => 'nullable|array'
         ]);
         $post = Post::create([
             'title' => $request->title,

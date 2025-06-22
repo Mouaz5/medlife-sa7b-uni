@@ -11,6 +11,7 @@ class Certificate extends Model
     use HasFactory;
     protected $fillable = [
         'file',
+        'title',
         'student_id'
     ];
     public function student()

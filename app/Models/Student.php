@@ -23,6 +23,9 @@ class Student extends Model
         'github_account',
         'x_account',
     ];
+    protected $hidden = [
+        'pivot'
+    ];
     public function getFullNameAttribute()
     {
         return "{$this->first_name} {$this->middle_name} {$this->last_name}";

@@ -19,9 +19,7 @@ Route::post('register/otp', [AuthController::class, 'requestOTPForRegistration']
 Route::post('register/verify', [AuthController::class, 'verifyOTPForRegistration']);
 Route::post('register/complete', [AuthController::class, 'completeRegistration']);
 
-Route::post('login/otp', [AuthController::class, 'requestOTPForLogin']);
-Route::post('login/verify', [AuthController::class, 'verifyOTPForLogin']);
-
+Route::post('login', [AuthController::class, 'login']);
 //admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum','admin']], function () {
     // universities (delete,update,store)

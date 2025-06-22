@@ -26,6 +26,24 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function login(Request $request) {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ]);
+        if (auth()->attempt($request->only('email', 'password'))) {
+            $user = auth()->user();
+            $token = $user->createToken('api-token-' . Str::slug($user->name))->plainTextToken;
+            return response()->json([
+                'success' => true,
+                'status' => 200,
+                'message' => 'Logged in successfully',
+                'token' => $token
+            ]);
+        } else {
+            return response()->json(ApiFormatter::error('Invalid credentials'), 401);
+        }
+    }
     public function requestOTPForRegistration(RequestOTPForRegistrationRequest $request)
     {
         $request->validated();

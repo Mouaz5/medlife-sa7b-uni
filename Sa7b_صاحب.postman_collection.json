@@ -389,116 +389,46 @@
 					]
 				},
 				{
-					"name": "Login",
-					"item": [
-						{
-							"name": "login_first_step",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "email",
-											"value": "test@example.com",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/api/login/otp",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"login",
-										"otp"
-									]
-								}
-							},
-							"response": [
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
 								{
-									"name": "login_first_step",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "email",
-													"value": "test@example.com",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{url}}/api/login/otp",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"login",
-												"otp"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.4.1"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 17 Jun 2025 10:26:25 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"otp sent, check your email\"\n}"
+									"key": "email",
+									"value": "test@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
 								}
 							]
 						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "login_second_step",
-							"request": {
+							"name": "login",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -516,104 +446,58 @@
 											"type": "text"
 										},
 										{
-											"key": "otp",
-											"value": "856239",
+											"key": "password",
+											"value": "password",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/api/login/verify",
+									"raw": "{{url}}/api/login",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
-										"login",
-										"verify"
+										"login"
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "login_second_step",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "email",
-													"value": "test@example.com",
-													"type": "text"
-												},
-												{
-													"key": "otp",
-													"value": "856239",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{url}}/api/login/verify",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"login",
-												"verify"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.4.1"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 17 Jun 2025 10:27:30 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
-									"body": "{\n    \"success\": false,\n    \"status\": 400,\n    \"message\": \"OTP Verification successfully\",\n    \"token\": \"DX1PPg3ACQFNFRzTvv9cAF23uusAxF8xfMwKrokb24b8eccf\"\n}"
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 19:17:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Logged in successfully\",\n    \"token\": \"7|fm6P2yPolIeMfenfmlZGsYxaTMC1Qe0ACuwHe9ai5c0907e6\"\n}"
 						}
 					]
 				}

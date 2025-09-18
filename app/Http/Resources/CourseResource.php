@@ -17,15 +17,33 @@ class CourseResource extends JsonResource
         return [
             'id' => $this->id,
             'course_name' => $this->name,
-            'collage_id' => $this->collage_id,
-            'collage_name' => $this->collage->name ?? null,
-            'university_id' => $this->collage->university->id ?? null,
-            'university_name' => $this->collage->university->name ?? null,
-            'semester_term' => $this->semester->term ?? null,
-            'academic_year_id' => $this->semester->academicYear->id ?? null ,
-            'academic_year_year' => $this->semester->academicYear->year ?? null,
-            'study_year_id' => $this->semester->studyYear->id ?? null,
-            'study_year_year' => $this->semester->studyYear->year ?? null,
+            'lectures' => $this->lectures->map(function ($lecture) {
+                return [
+                    'id' => $lecture->id,
+                    'title' => $lecture->title,
+                    'created_at' => $lecture->created_at->format('Y-m-d'),
+                ];
+            }),
+            'handouts' => $this->handouts->map(function ($handout) {
+                return [
+                    'id' => $handout->id,
+                    'title' => $handout->title,
+                    'content' => $handout->content,
+                    'created_at' => $handout->created_at->format('Y-m-d')
+                ];
+            }),
+            'exams' => $this->exams->map(function ($exam) {
+                return [
+                    'id' => $exam->id,
+                    'title' => $exam->title,
+                    'exam_content' => $exam->exam_content,
+                    'solution_content' => $exam->solution_content,
+                    'created_at' => $exam->created_at->format('Y-m-d')
+                ];
+            }),
+            'academicGuidance' => $this->academicGuidance,
+            'events' => $this->events,
+            'announcements' => $this->announcements
         ];
     }
 }

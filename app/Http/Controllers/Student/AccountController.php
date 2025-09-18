@@ -23,7 +23,7 @@ class AccountController extends Controller
 
     public function account()
     {
-        $student = auth()->user()->student;
+        $student = auth()->user()->student->load(['academicTimeline.studyYear', 'academicTimeline.academicYear']);
         return response()->json(
             ApiFormatter::success(
                 'Account Retrieved Successfully',
@@ -33,6 +33,7 @@ class AccountController extends Controller
 
     public function getStudentAccount(Student $student)
     {
+        $student->load(['academicTimeline.studyYear', 'academicTimeline.academicYear']);
         return response()->json([
             'message' => 'Account Retrieved Successfully',
             'data' => new AccountResource($student)
@@ -101,7 +102,11 @@ class AccountController extends Controller
             }
         }
 
-        StudentAcademicTimeline::where('academic_year_id', $academicYearId)->update(['student_id' => $student->id]);
+        if ($academicYearId !== null) {
+            // Update the student's academic timeline with the new academic year
+            StudentAcademicTimeline::where('student_id', $student->id)
+                ->update(['academic_year_id' => $academicYearId]);
+        }
 
         return response()->json(
             ApiFormatter::success('Account Updated Successfully')

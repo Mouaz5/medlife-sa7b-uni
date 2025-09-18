@@ -13,12 +13,17 @@ class Handout extends Model
         'title',
         'content',
         'course_id',
+        'lecture_id',
         'academic_year_id',
         'student_id'
     ];
     public function course()
     {
         return $this->belongsTo(Course::class);
+    }
+    public function lecture()
+    {
+        return $this->belongsTo(Lecture::class);
     }
     public function academicYear()
     {

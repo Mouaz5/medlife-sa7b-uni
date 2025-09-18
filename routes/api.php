@@ -8,7 +8,10 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\Student\AccountController;
 use App\Http\Controllers\Student\CertificatesController;
 use App\Http\Controllers\Student\ComplaintController;
+use App\Http\Controllers\Student\CourseController;
 use App\Http\Controllers\Student\FollowController;
+use App\Http\Controllers\Student\LectureController;
+use App\Http\Controllers\Student\LectureUploadController;
 use App\Http\Controllers\Student\PostController;
 use App\Http\Controllers\Student\PrivacySettingsController;
 use App\Http\Controllers\Student\SearchController;
@@ -81,6 +84,7 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
     });
     Route::group(['prefix' => 'complaints'], function () {
         Route::get('/', [ComplaintController::class, 'index']);
+        Route::get('/types', [ComplaintController::class, 'getComplaintTypes']);
         Route::get('/{complaint}', [ComplaintController::class, 'show']);
         Route::post('/send', [ComplaintController::class, 'store']);
         Route::put('/{complaint}', [ComplaintController::class, 'update']);
@@ -91,7 +95,58 @@ Route::group(['prefix' => 'student', 'middleware' => ['auth:sanctum','student']]
         Route::get('/', [PrivacySettingsController::class, 'index']);
         Route::patch('/', [PrivacySettingsController::class, 'update']);
     });
+    // courses
+    Route::group(['prefix' => 'courses'], function () {
+        Route::get('/', [CourseController::class, 'index']);
+        Route::get('/my-courses', [CourseController::class, 'myCourses']);
+        Route::get('/{course}', [CourseController::class, 'show']);
 
+        // lectures
+        Route::group(['prefix' => '{course}'], function () {
+            Route::get('/lectures', [LectureController::class, 'index']);
+            Route::get('/slides', [LectureController::class, 'slides']);
+            Route::get('/audios', [LectureController::class, 'audios']);
+            Route::get('/summaries', [LectureController::class, 'summaries']);
+            Route::get('/academic-guidance', [LectureController::class, 'academicGuidance']);
+            Route::get('/announcements', [LectureController::class, 'announcements']);
+            Route::get('/correction-scales', [LectureController::class, 'correctionScales']); 
+        });
+    });
+
+    // Individual File Details and Downloads
+    Route::group(['prefix' => 'files'], function () {
+        // Get individual file details
+        Route::get('/slides/{slide}', [LectureController::class, 'getSlide']);
+        Route::get('/audios/{audio}', [LectureController::class, 'getAudio']);
+        Route::get('/summaries/{summary}', [LectureController::class, 'getSummary']);
+        
+        // Download files
+        Route::get('/slides/{slide}/download', [LectureController::class, 'downloadSlide']);
+        Route::get('/audios/{audio}/download', [LectureController::class, 'downloadAudio']);
+        Route::get('/summaries/{summary}/download', [LectureController::class, 'downloadSummary']);
+    });
+
+    // Lecture File Uploads
+    Route::group(['prefix' => 'lectures'], function () {
+        // Upload routes for lecture files
+        Route::post('/{lecture}/upload/slides', [LectureUploadController::class, 'uploadSlides']);
+        Route::post('/{lecture}/upload/audios', [LectureUploadController::class, 'uploadAudios']);
+        Route::post('/{lecture}/upload/summaries', [LectureUploadController::class, 'uploadSummaries']);
+        Route::post('/{lecture}/upload/handouts', [LectureUploadController::class, 'uploadHandouts']);
+        
+        // Delete routes for lecture files
+        Route::delete('/slides/{slide}', [LectureUploadController::class, 'deleteSlide']);
+        Route::delete('/audios/{audio}', [LectureUploadController::class, 'deleteAudio']);
+        Route::delete('/summaries/{summary}', [LectureUploadController::class, 'deleteSummary']);
+        Route::delete('/handouts/{handout}', [LectureUploadController::class, 'deleteHandout']);
+    });
+    
+    // Feedback
+    Route::group(['prefix' => 'feedbacks'], function () {
+        Route::get('/course/{course}', [App\Http\Controllers\Student\FeedbackController::class, 'index']);
+        Route::get('/{feedback}', [App\Http\Controllers\Student\FeedbackController::class, 'show']);
+        Route::post('/{feedback}/submit', [App\Http\Controllers\Student\FeedbackController::class, 'store']);
+    });
     
     // Academic Guidance
     Route::group(['prefix' => 'academic-guidance'], function () {

@@ -13,13 +13,9 @@ class LectureResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'content' => $this->content,
-            'course' => $this->course->name ?? null,
-            'course' => $this->course->id ?? null,
+            'course_name' => $this->course->name ?? null,
             'academic_year' => $this->academicYear->year ?? null,
-            'academic_year_id' => $this->academicYear->id ?? null,
-            'files' => $this->files, 
             'created_at' => $this->created_at ? $this->created_at->format('Y-m-d H:i:s') : null,
-            'updated_at' => $this->updated_at ? $this->updated_at->format('Y-m-d H:i:s') : null
         ];
     }
 }

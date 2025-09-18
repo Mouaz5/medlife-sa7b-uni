@@ -42,4 +42,16 @@ class Course extends Model
     {
         return $this->belongsToMany(Student::class, 'student_courses');
     }
+    public function academicGuidance()
+    {
+        return $this->hasMany(AcademicGuidance::class);
+    }
+    public function announcements()
+    {
+        return $this->hasMany(Announcement::class);
+    }
+    public function feedbacks()
+    {
+        return $this->hasMany(Feedback::class);
+    }
 }

@@ -4,8 +4,13 @@ namespace App\Http\Controllers\Student;
 
 use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Complaint\StoreComplaintRequest;
+use App\Http\Requests\Complaint\UpdateComplaintRequest;
+use App\Http\Resources\ComplaintResource;
+use App\Http\Resources\ComplaintTypeResource;
 use App\Models\Complaint;
 use App\Models\ComplaintFile;
+use App\Models\ComplaintType;
 use App\Services\UploadService;
 use Illuminate\Http\Request;
 
@@ -24,8 +29,9 @@ class ComplaintController extends Controller
             ->with(['type', 'files'])
             ->latest()
             ->get();
+        
         return response()->json([
-            ApiFormatter::success('Complaints retrieved successfully.', $complaints)
+            ApiFormatter::success('Complaints retrieved successfully.', ComplaintResource::collection($complaints))
         ]);
     }
 
@@ -38,18 +44,11 @@ class ComplaintController extends Controller
         $complaint->load(['type', 'files']);
         
         return response()->json(
-            ApiFormatter::success('Complaint retrieved successfully.', $complaint)
+            ApiFormatter::success('Complaint retrieved successfully.', new ComplaintResource($complaint))
         );
     }
 
-    public function store(Request $request) {
-        $request->validate([
-            'title' => 'required|string|min:5',
-            'description' => 'required|string|min:10',
-            'type_id' => 'required|exists:complaint_types,id',
-            'images' => 'nullable|array',
-        ]);
-
+    public function store(StoreComplaintRequest $request) {
         $student = auth()->user()->student;
 
         $complaint = Complaint::create([
@@ -75,29 +74,23 @@ class ComplaintController extends Controller
             }
         }
 
-        $complaint->load(['files']);
+        $complaint->load(['type', 'files']);
 
         return response()->json([
-            ApiFormatter::success('Complaint created successfully.', $complaint)
+            ApiFormatter::success('Complaint created successfully.', new ComplaintResource($complaint))
         ]);
     }
 
-    public function update(Request $request, Complaint $complaint) {
+    public function update(UpdateComplaintRequest $request, Complaint $complaint) {
         if ($complaint->student_id !== auth()->user()->student->id) {
             return response()->json(ApiFormatter::error('Unauthorized', 'You are not authorized to update this complaint.'), 403);
         }
 
-        $validatedData = $request->validate([
-            'title' => 'sometimes|required|string|min:5',
-            'description' => 'sometimes|required|string|min:10',
-            'type_id' => 'sometimes|required|exists:complaint_types,id',
-            ]);
-
-        $complaint->update($validatedData);
+        $complaint->update($request->validated());
         $complaint->load(['type', 'files']);
 
         return response()->json(
-            ApiFormatter::success('Complaint updated successfully.', $complaint), 200
+            ApiFormatter::success('Complaint updated successfully.', new ComplaintResource($complaint)), 200
         );
     }
 
@@ -111,5 +104,16 @@ class ComplaintController extends Controller
         return response()->json(
             ApiFormatter::success('Complaint deleted successfully.'), 200
         );
+    }
+
+    /**
+     * Get all complaint types
+     */
+    public function getComplaintTypes() {
+        $complaintTypes = ComplaintType::all();
+        
+        return response()->json([
+            ApiFormatter::success('Complaint types retrieved successfully.', ComplaintTypeResource::collection($complaintTypes))
+        ]);
     }
 }

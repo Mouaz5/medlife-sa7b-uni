@@ -4373,6 +4373,725 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Courses & Lectures",
+			"item": [
+				{
+					"name": "Get All Courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"courses"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get My Courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/courses/my-courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"courses",
+								"my-courses"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Course Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/courses/{{course_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"courses",
+								"{{course_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Course Lectures",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/courses/{{course_id}}/lectures",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"courses",
+								"{{course_id}}",
+								"lectures"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Course Slides",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/courses/{{course_id}}/slides",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"courses",
+								"{{course_id}}",
+								"slides"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Course Audios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/courses/{{course_id}}/audios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"courses",
+								"{{course_id}}",
+								"audios"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Course Summaries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/courses/{{course_id}}/summaries",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"courses",
+								"{{course_id}}",
+								"summaries"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "File Management",
+			"item": [
+				{
+					"name": "Get Slide Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/files/slides/{{slide_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"files",
+								"slides",
+								"{{slide_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Audio Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/files/audios/{{audio_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"files",
+								"audios",
+								"{{audio_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Summary Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/files/summaries/{{summary_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"files",
+								"summaries",
+								"{{summary_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Download Slide",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/files/slides/{{slide_id}}/download",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"files",
+								"slides",
+								"{{slide_id}}",
+								"download"
+							]
+						}
+					}
+				},
+				{
+					"name": "Download Audio",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/files/audios/{{audio_id}}/download",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"files",
+								"audios",
+								"{{audio_id}}",
+								"download"
+							]
+						}
+					}
+				},
+				{
+					"name": "Download Summary",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/files/summaries/{{summary_id}}/download",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"files",
+								"summaries",
+								"{{summary_id}}",
+								"download"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "File Upload",
+			"item": [
+				{
+					"name": "Upload Slides",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Lecture 5 Slides",
+									"type": "text"
+								},
+								{
+									"key": "slides",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/student/lectures/{{lecture_id}}/upload/slides",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"lectures",
+								"{{lecture_id}}",
+								"upload",
+								"slides"
+							]
+						}
+					}
+				},
+				{
+					"name": "Upload Audios",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Lecture 5 Audio",
+									"type": "text"
+								},
+								{
+									"key": "audios",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/student/lectures/{{lecture_id}}/upload/audios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"lectures",
+								"{{lecture_id}}",
+								"upload",
+								"audios"
+							]
+						}
+					}
+				},
+				{
+					"name": "Upload Summaries",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Lecture 5 Summary",
+									"type": "text"
+								},
+								{
+									"key": "summaries",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/student/lectures/{{lecture_id}}/upload/summaries",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"lectures",
+								"{{lecture_id}}",
+								"upload",
+								"summaries"
+							]
+						}
+					}
+				},
+				{
+					"name": "Upload Handouts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Lecture 5 Handouts",
+									"type": "text"
+								},
+								{
+									"key": "handouts",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/student/lectures/{{lecture_id}}/upload/handouts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"lectures",
+								"{{lecture_id}}",
+								"upload",
+								"handouts"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "File Deletion",
+			"item": [
+				{
+					"name": "Delete Slide",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/lectures/slides/{{slide_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"lectures",
+								"slides",
+								"{{slide_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Audio",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/lectures/audios/{{audio_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"lectures",
+								"audios",
+								"{{audio_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Summary",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/lectures/summaries/{{summary_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"lectures",
+								"summaries",
+								"{{summary_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Handout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/lectures/handouts/{{handout_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"lectures",
+								"handouts",
+								"{{handout_id}}"
+							]
+						}
+					}
+				}
+			]
 		}
 	],
 	"event": [
@@ -4401,6 +5120,41 @@
 		{
 			"key": "url",
 			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "course_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "lecture_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "slide_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "audio_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "summary_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "handout_id",
+			"value": "1",
 			"type": "string"
 		}
 	]

@@ -28,8 +28,16 @@ class Lecture extends Model
     {
         return $this->belongsTo(Student::class);
     }
-    public function files()
+    public function audios()
     {
         return $this->hasMany(LectureAudio::class);
+    }
+    public function slides()
+    {
+        return $this->hasMany(Slide::class);
+    }
+    public function summaries()
+    {
+        return $this->hasMany(Summary::class);
     }
 }

@@ -10,7 +10,7 @@ class UploadService
     {
         if ($request->hasFile($fieldName) && $request->file($fieldName)->isValid()) {
             $path = $request->file($fieldName)->store($directory, 'public');
-            return asset('storage/' . $path);
+            return $path; // Return just the relative path, not the full URL
         }
         return null;
     }
